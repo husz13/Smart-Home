@@ -1,0 +1,11 @@
+#include <avr/io.h>
+#include "MCAL/DIO/int.h"
+#include "HAL/LCD/int.h"
+#include "HAL/KeyBad/int.h"
+#include <util/delay.h>
+int main(void){
+
+	while(1){
+
+	}
+}
