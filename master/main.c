@@ -46,3 +46,9 @@ int main(void){
 
 	}
 }
+
+u8 check_EEPROM_Flag(void) {
+	u8 flag_val = EEPROM_ReadByteFromAddress(EEPROM_FLAG_ADDRESS);
+
+	return flag_val != EEPROM_EMPTY_ADDRESS;
+}

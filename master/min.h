@@ -13,6 +13,8 @@
 #define EEPROM_FLAG_ADDRESS 0x00
 #define EEPROM_ADMIN_ADDRESS 0x01
 #define EEPROM_GUEST_ADDRESS 0x05
+#define EEPROM_EMPTY_ADDRESS 0xFF
+
 u8 check_EEPROM_Flag(void); //Checks EEPROM Flag
 u32 getAdminPass(void); //Returns Admin Password From EEPROM
 u32 getGuestPass(void); //Returns Guest Password From EEPROM
