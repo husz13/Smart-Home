@@ -1,5 +1,7 @@
 #include "EEPROM.h"
 #include <avr/io.h>
+#include <util/delay.h>
+#include "../../HAL/LCD/int.h"
 
 u8 EEPROM_ReadByteFromAddress(const u16 address)
 {
@@ -14,7 +16,7 @@ u8 EEPROM_ReadByteFromAddress(const u16 address)
 	return EEDR;
 }
 
-void EEPROM_ReadBlockFromAddress(const u16 address, u8* dist, const u16 size)
+void EEPROM_ReadBlockFromAddress(const u16 address, u8 dist[], const u16 size)
 {
 	/* Wait for completion of previous write */
 	while (((EECR & (1 << EEWE))>>EEWE)==1)
@@ -62,33 +64,13 @@ void EEPROM_WriteByteToAddress(const u16 address, const u8 data)
 
 }
 
-void EEPROM_WriteBlockToAddress(const u16 address, const u8* data,
+void EEPROM_WriteBlockToAddress(const u16 address, const u8 data[],
 		const u16 size)
 {
-	u16 counter = 0; //Bytes write counter
-	while (counter < size)
-	{
-		/* Wait for completion of previous write process*/
-		while (( (EECR & (1 << EEWE) ) >>EEWE ) == 1)
-		;
-		/* Set up address register */
-		EEAR = address + counter;
-
-		/* Read the byte in the address of EEAR */
-		EECR |= (1 << EERE);
-		if (EEDR != (*(data + counter))) //compare the value read to the value to be written
-		{//if they are not equal then write the data
-			EEDR = *(data + counter); //move the data to EEDR
-
-			/* Write logical one to EEMWE */
-			EECR |= (1 << EEMWE);
-			/* Start EEPROM write by setting EEWE */
-			EECR |= (1 << EEWE);
-		}
-		else
-		{
-
-		}
-		counter++;//increase bytes counter
+	u8 i;
+	for (i = 0; i < size; i++) {
+		LCD_WriteChar(i + '0');
+		EEPROM_WriteByteToAddress(address + i, data[i]);
+		_delay_ms(1000);
 	}
 }

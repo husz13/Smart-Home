@@ -1977,3 +1977,1284 @@ Data:        396 bytes (38.7% Full)
 
 Finished building: sizedummy
  
+19:08:06 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:80: warning: implicit declaration of function 'malloc'
+../main.c:80: warning: incompatible implicit declaration of built-in function 'malloc'
+../main.c:81: warning: assignment makes integer from pointer without a cast
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:98: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15472 bytes (94.4% Full)
+(.text + .data + .bootloader)
+
+Data:        422 bytes (41.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:12:21 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../HAL/LCD/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"HAL/LCD/prg.d" -MT"HAL/LCD/prg.o" -c -o "HAL/LCD/prg.o" "../HAL/LCD/prg.c"
+../HAL/LCD/prg.c:7:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../HAL/LCD/prg.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/LCD/prg.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:80: warning: implicit declaration of function 'malloc'
+../main.c:80: warning: incompatible implicit declaration of built-in function 'malloc'
+../main.c:81: warning: assignment makes integer from pointer without a cast
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:83: warning: implicit declaration of function 'LCD_GoTo'
+../main.c:98: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+./main.o: In function `main':
+../main.c:37: undefined reference to `LCD_GoTo'
+make: *** [master.elf] Error 1
+19:13:12 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:80: warning: implicit declaration of function 'malloc'
+../main.c:80: warning: incompatible implicit declaration of built-in function 'malloc'
+../main.c:81: warning: assignment makes integer from pointer without a cast
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:98: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15560 bytes (95.0% Full)
+(.text + .data + .bootloader)
+
+Data:        422 bytes (41.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:14:41 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:80: warning: implicit declaration of function 'malloc'
+../main.c:80: warning: incompatible implicit declaration of built-in function 'malloc'
+../main.c:81: warning: assignment makes integer from pointer without a cast
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:98: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15794 bytes (96.4% Full)
+(.text + .data + .bootloader)
+
+Data:        422 bytes (41.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:25:52 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../main.c:17:
+../min.h:18:2: error: invalid preprocessing directive #defien
+../main.c: In function 'setAdminGuestScreen':
+../main.c:80: warning: implicit declaration of function 'malloc'
+../main.c:80: warning: incompatible implicit declaration of built-in function 'malloc'
+../main.c:81: warning: assignment makes integer from pointer without a cast
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:106: error: invalid type argument of 'unary *' (have 'int')
+../main.c:115: warning: passing argument 1 of 'setGuestPass' makes pointer from integer without a cast
+../main.c:116: warning: implicit declaration of function 'EEPROM_WriteByteToAdress'
+../main.c:116: error: 'EEPROM_FLAG_NOT_EMPTY' undeclared (first use in this function)
+../main.c:116: error: (Each undeclared identifier is reported only once
+../main.c:116: error: for each function it appears in.)
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:124: warning: control reaches end of non-void function
+make: *** [main.o] Error 1
+19:27:31 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../main.c:17:
+../min.h:18:2: error: invalid preprocessing directive #defien
+../main.c: In function 'setAdminGuestScreen':
+../main.c:80: warning: implicit declaration of function 'malloc'
+../main.c:80: warning: incompatible implicit declaration of built-in function 'malloc'
+../main.c:81: warning: assignment makes integer from pointer without a cast
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:106: error: invalid type argument of 'unary *' (have 'int')
+../main.c:115: warning: passing argument 1 of 'setGuestPass' makes pointer from integer without a cast
+../main.c:116: warning: implicit declaration of function 'EEPROM_WriteByteToAdress'
+../main.c:116: error: 'EEPROM_FLAG_NOT_EMPTY' undeclared (first use in this function)
+../main.c:116: error: (Each undeclared identifier is reported only once
+../main.c:116: error: for each function it appears in.)
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:124: warning: control reaches end of non-void function
+make: *** [main.o] Error 1
+19:27:41 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../main.c:17:
+../min.h:18:2: error: invalid preprocessing directive #defien
+../main.c: In function 'setAdminGuestScreen':
+../main.c:80: warning: implicit declaration of function 'malloc'
+../main.c:80: warning: incompatible implicit declaration of built-in function 'malloc'
+../main.c:81: warning: assignment makes integer from pointer without a cast
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:106: error: invalid type argument of 'unary *' (have 'int')
+../main.c:115: warning: passing argument 1 of 'setGuestPass' makes pointer from integer without a cast
+../main.c:116: warning: implicit declaration of function 'EEPROM_WriteByteToAdress'
+../main.c:116: error: 'EEPROM_FLAG_NOT_EMPTY' undeclared (first use in this function)
+../main.c:116: error: (Each undeclared identifier is reported only once
+../main.c:116: error: for each function it appears in.)
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:124: warning: control reaches end of non-void function
+make: *** [main.o] Error 1
+19:28:31 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../main.c:17:
+../min.h:18:2: error: invalid preprocessing directive #defien
+../main.c: In function 'setAdminGuestScreen':
+../main.c:80: warning: implicit declaration of function 'malloc'
+../main.c:80: warning: incompatible implicit declaration of built-in function 'malloc'
+../main.c:81: warning: assignment makes integer from pointer without a cast
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:106: error: invalid type argument of 'unary *' (have 'int')
+../main.c:115: warning: passing argument 1 of 'setGuestPass' makes pointer from integer without a cast
+../main.c:116: warning: implicit declaration of function 'EEPROM_WriteByteToAdress'
+../main.c:116: error: 'EEPROM_FLAG_NOT_EMPTY' undeclared (first use in this function)
+../main.c:116: error: (Each undeclared identifier is reported only once
+../main.c:116: error: for each function it appears in.)
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:124: warning: control reaches end of non-void function
+make: *** [main.o] Error 1
+19:29:06 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:80: warning: implicit declaration of function 'malloc'
+../main.c:80: warning: incompatible implicit declaration of built-in function 'malloc'
+../main.c:81: warning: assignment makes integer from pointer without a cast
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:106: error: invalid type argument of 'unary *' (have 'int')
+../main.c:115: warning: passing argument 1 of 'setGuestPass' makes pointer from integer without a cast
+../main.c:116: warning: implicit declaration of function 'EEPROM_WriteByteToAdress'
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:124: warning: control reaches end of non-void function
+make: *** [main.o] Error 1
+19:30:36 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:80: warning: implicit declaration of function 'calloc'
+../main.c:80: warning: incompatible implicit declaration of built-in function 'calloc'
+../main.c:81: warning: assignment makes integer from pointer without a cast
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:106: error: invalid type argument of 'unary *' (have 'int')
+../main.c:115: warning: passing argument 1 of 'setGuestPass' makes pointer from integer without a cast
+../main.c:116: warning: implicit declaration of function 'EEPROM_WriteByteToAdress'
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:124: warning: control reaches end of non-void function
+make: *** [main.o] Error 1
+19:31:12 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:80: warning: implicit declaration of function 'calloc'
+../main.c:80: warning: incompatible implicit declaration of built-in function 'calloc'
+../main.c:80: warning: cast from pointer to integer of different size
+../main.c:80: warning: assignment makes pointer from integer without a cast
+../main.c:81: warning: cast from pointer to integer of different size
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:106: error: invalid type argument of 'unary *' (have 'int')
+../main.c:115: warning: passing argument 1 of 'setGuestPass' makes pointer from integer without a cast
+../main.c:116: warning: implicit declaration of function 'EEPROM_WriteByteToAdress'
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:124: warning: control reaches end of non-void function
+make: *** [main.o] Error 1
+19:33:04 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:116: warning: implicit declaration of function 'EEPROM_WriteByteToAdress'
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:124: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+./main.o: In function `main':
+../main.c:37: undefined reference to `EEPROM_WriteByteToAdress'
+make: *** [master.elf] Error 1
+19:33:45 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:124: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15862 bytes (96.8% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (45.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:35:55 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../MCAL/EEPROM/EEPROM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MCAL/EEPROM/EEPROM.d" -MT"MCAL/EEPROM/EEPROM.o" -c -o "MCAL/EEPROM/EEPROM.o" "../MCAL/EEPROM/EEPROM.c"
+Finished building: ../MCAL/EEPROM/EEPROM.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15862 bytes (96.8% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (45.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:36:56 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:124: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15836 bytes (96.7% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (45.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:40:16 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:124: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15856 bytes (96.8% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (45.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:40:27 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:124: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15850 bytes (96.7% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (45.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:41:50 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:122: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:126: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15866 bytes (96.8% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (45.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:49:42 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:122: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:126: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15866 bytes (96.8% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (45.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:50:35 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:122: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:126: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15874 bytes (96.9% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (45.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:52:29 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:122: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:126: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   15874 bytes (96.9% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (45.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:55:44 **** Clean-only build of configuration Debug for project master ****
+make clean 
+rm -rf  master.hex  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o  sizedummy  master.lss  ./MCAL/Timer/prg.d  ./MCAL/SPI/prg.d  ./MCAL/Interrupt/prg.d  ./MCAL/EEPROM/EEPROM.d  ./MCAL/DIO/prg.d  ./MCAL/ADC/prg.d  ./HAL/StepperMotor/prg.d  ./HAL/Sensor/prg.d  ./HAL/Motor/prg.d  ./HAL/LCD/prg.d  ./HAL/KeyBad/prg.d  ./main.d  master.elf
+ 
+19:55:45 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../MCAL/Timer/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/Timer/prg.d" -MT"MCAL/Timer/prg.o" -c -o "MCAL/Timer/prg.o" "../MCAL/Timer/prg.c"
+Finished building: ../MCAL/Timer/prg.c
+ 
+Building file: ../MCAL/SPI/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/SPI/prg.d" -MT"MCAL/SPI/prg.o" -c -o "MCAL/SPI/prg.o" "../MCAL/SPI/prg.c"
+Finished building: ../MCAL/SPI/prg.c
+ 
+Building file: ../MCAL/Interrupt/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/Interrupt/prg.d" -MT"MCAL/Interrupt/prg.o" -c -o "MCAL/Interrupt/prg.o" "../MCAL/Interrupt/prg.c"
+Finished building: ../MCAL/Interrupt/prg.c
+ 
+Building file: ../MCAL/EEPROM/EEPROM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/EEPROM/EEPROM.d" -MT"MCAL/EEPROM/EEPROM.o" -c -o "MCAL/EEPROM/EEPROM.o" "../MCAL/EEPROM/EEPROM.c"
+Finished building: ../MCAL/EEPROM/EEPROM.c
+ 
+Building file: ../MCAL/DIO/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/DIO/prg.d" -MT"MCAL/DIO/prg.o" -c -o "MCAL/DIO/prg.o" "../MCAL/DIO/prg.c"
+../MCAL/DIO/prg.c: In function 'DIO_GetPinVal':
+../MCAL/DIO/prg.c:153: warning: control reaches end of non-void function
+../MCAL/DIO/prg.c: In function 'DIO_GetPortVal':
+../MCAL/DIO/prg.c:171: warning: control reaches end of non-void function
+Finished building: ../MCAL/DIO/prg.c
+ 
+Building file: ../MCAL/ADC/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/ADC/prg.d" -MT"MCAL/ADC/prg.o" -c -o "MCAL/ADC/prg.o" "../MCAL/ADC/prg.c"
+Finished building: ../MCAL/ADC/prg.c
+ 
+Building file: ../HAL/StepperMotor/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/StepperMotor/prg.d" -MT"HAL/StepperMotor/prg.o" -c -o "HAL/StepperMotor/prg.o" "../HAL/StepperMotor/prg.c"
+In file included from ../HAL/StepperMotor/prg.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../HAL/StepperMotor/prg.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/StepperMotor/prg.c
+ 
+Building file: ../HAL/Sensor/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/Sensor/prg.d" -MT"HAL/Sensor/prg.o" -c -o "HAL/Sensor/prg.o" "../HAL/Sensor/prg.c"
+Finished building: ../HAL/Sensor/prg.c
+ 
+Building file: ../HAL/Motor/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/Motor/prg.d" -MT"HAL/Motor/prg.o" -c -o "HAL/Motor/prg.o" "../HAL/Motor/prg.c"
+Finished building: ../HAL/Motor/prg.c
+ 
+Building file: ../HAL/LCD/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/LCD/prg.d" -MT"HAL/LCD/prg.o" -c -o "HAL/LCD/prg.o" "../HAL/LCD/prg.c"
+../HAL/LCD/prg.c:7:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../HAL/LCD/prg.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/LCD/prg.c
+ 
+Building file: ../HAL/KeyBad/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/KeyBad/prg.d" -MT"HAL/KeyBad/prg.o" -c -o "HAL/KeyBad/prg.o" "../HAL/KeyBad/prg.c"
+../HAL/KeyBad/prg.c:7:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../HAL/KeyBad/prg.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/KeyBad/prg.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:122: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:126: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega32 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15874 bytes (48.4% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (22.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:59:04 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:122: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:126: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega32 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15874 bytes (48.4% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (22.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:06:19 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../MCAL/EEPROM/EEPROM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/EEPROM/EEPROM.d" -MT"MCAL/EEPROM/EEPROM.o" -c -o "MCAL/EEPROM/EEPROM.o" "../MCAL/EEPROM/EEPROM.c"
+Finished building: ../MCAL/EEPROM/EEPROM.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega32 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15890 bytes (48.5% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (22.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:09:27 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../MCAL/EEPROM/EEPROM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/EEPROM/EEPROM.d" -MT"MCAL/EEPROM/EEPROM.o" -c -o "MCAL/EEPROM/EEPROM.o" "../MCAL/EEPROM/EEPROM.c"
+Finished building: ../MCAL/EEPROM/EEPROM.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega32 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15776 bytes (48.1% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (22.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:26:09 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../MCAL/EEPROM/EEPROM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/EEPROM/EEPROM.d" -MT"MCAL/EEPROM/EEPROM.o" -c -o "MCAL/EEPROM/EEPROM.o" "../MCAL/EEPROM/EEPROM.c"
+Finished building: ../MCAL/EEPROM/EEPROM.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega32 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15784 bytes (48.2% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (22.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:26:26 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:122: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:126: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega32 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15774 bytes (48.1% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (22.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:29:03 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../MCAL/EEPROM/EEPROM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/EEPROM/EEPROM.d" -MT"MCAL/EEPROM/EEPROM.o" -c -o "MCAL/EEPROM/EEPROM.o" "../MCAL/EEPROM/EEPROM.c"
+../MCAL/EEPROM/EEPROM.c: In function 'EEPROM_PutChar':
+../MCAL/EEPROM/EEPROM.c:71: warning: implicit declaration of function '__save_interrupt'
+../MCAL/EEPROM/EEPROM.c:72: warning: implicit declaration of function '__disable_interrupt'
+../MCAL/EEPROM/EEPROM.c:75: error: 'EEPE' undeclared (first use in this function)
+../MCAL/EEPROM/EEPROM.c:75: error: (Each undeclared identifier is reported only once
+../MCAL/EEPROM/EEPROM.c:75: error: for each function it appears in.)
+../MCAL/EEPROM/EEPROM.c:78: error: 'SPMCSR' undeclared (first use in this function)
+../MCAL/EEPROM/EEPROM.c:78: error: 'SELFPRGEN' undeclared (first use in this function)
+../MCAL/EEPROM/EEPROM.c:95: error: 'EEMPE' undeclared (first use in this function)
+../MCAL/EEPROM/EEPROM.c:96: error: 'EEPM1' undeclared (first use in this function)
+../MCAL/EEPROM/EEPROM.c:96: error: 'EEPM0' undeclared (first use in this function)
+../MCAL/EEPROM/EEPROM.c:119: warning: implicit declaration of function '__restore_interrupt'
+make: *** [MCAL/EEPROM/EEPROM.o] Error 1
+20:32:36 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../MCAL/EEPROM/EEPROM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/EEPROM/EEPROM.d" -MT"MCAL/EEPROM/EEPROM.o" -c -o "MCAL/EEPROM/EEPROM.o" "../MCAL/EEPROM/EEPROM.c"
+In file included from ../MCAL/EEPROM/EEPROM.c:3:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MCAL/EEPROM/EEPROM.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega32 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16004 bytes (48.8% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (22.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:35:07 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../MCAL/EEPROM/EEPROM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/EEPROM/EEPROM.d" -MT"MCAL/EEPROM/EEPROM.o" -c -o "MCAL/EEPROM/EEPROM.o" "../MCAL/EEPROM/EEPROM.c"
+In file included from ../MCAL/EEPROM/EEPROM.c:3:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../MCAL/EEPROM/EEPROM.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega32 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16004 bytes (48.8% Full)
+(.text + .data + .bootloader)
+
+Data:        466 bytes (22.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:13:35 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:122: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c: In function 'checkUserPassScreen':
+../main.c:132: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:135: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:130: warning: unused variable 'user_type'
+../main.c:136: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega32 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16086 bytes (49.1% Full)
+(.text + .data + .bootloader)
+
+Data:        500 bytes (24.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:49:46 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:122: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c: In function 'checkUserPassScreen':
+../main.c:134: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:137: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:151: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:167: error: 'CORRECT_PASS' undeclared (first use in this function)
+../main.c:167: error: (Each undeclared identifier is reported only once
+../main.c:167: error: for each function it appears in.)
+../main.c:178: error: 'WRONG_PASS' undeclared (first use in this function)
+../main.c:185: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:187: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:198: warning: control reaches end of non-void function
+make: *** [main.o] Error 1
+00:50:23 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:122: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c: In function 'checkUserPassScreen':
+../main.c:134: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:137: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:151: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:185: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:187: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:198: warning: control reaches end of non-void function
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega32 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16600 bytes (50.7% Full)
+(.text + .data + .bootloader)
+
+Data:        542 bytes (26.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:53:28 **** Incremental Build of configuration Debug for project master ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:122: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c: In function 'checkUserPassScreen':
+../main.c:134: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:137: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:151: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:185: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:187: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+Finished building: ../main.c
+ 
+Building target: master.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,master.map -mmcu=atmega32 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: master.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S master.elf  >"master.lss"
+Finished building: master.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
+Finished building: master.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 master.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16610 bytes (50.7% Full)
+(.text + .data + .bootloader)
+
+Data:        542 bytes (26.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

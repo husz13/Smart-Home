@@ -1,17 +1,26 @@
-18:49:33 **** Incremental Build of configuration Debug for project master ****
+00:53:28 **** Incremental Build of configuration Debug for project master ****
 make all 
 Building file: ../main.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
 In file included from ../main.c:2:
 c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-../main.c: In function 'main':
-../main.c:35: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c: In function 'setAdminGuestScreen':
+../main.c:82: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:99: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:120: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:122: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c: In function 'checkUserPassScreen':
+../main.c:134: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:137: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:151: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:185: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
+../main.c:187: warning: pointer targets in passing argument 1 of 'LCD_WriteString' differ in signedness
 Finished building: ../main.c
  
 Building target: master.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+avr-gcc -Wl,-Map,master.map -mmcu=atmega32 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/EEPROM/EEPROM.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
 Finished building target: master.elf
  
 Invoking: AVR Create Extended Listing
@@ -23,20 +32,20 @@ avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "mast
 Finished building: master.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega16 master.elf
+avr-size --format=avr --mcu=atmega32 master.elf
 AVR Memory Usage
 ----------------
-Device: atmega16
+Device: atmega32
 
-Program:   15538 bytes (94.8% Full)
+Program:   16610 bytes (50.7% Full)
 (.text + .data + .bootloader)
 
-Data:        396 bytes (38.7% Full)
+Data:        542 bytes (26.5% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
 
-18:49:33 Build Finished (took 790ms)
+00:53:29 Build Finished (took 962ms)
 
