@@ -13,6 +13,7 @@
 #include "MCAL/ADC/int.h"
 #include "MCAL/Timer/int.h"
 #include "MCAL/SPI/int.h"
+#include "MCAL/EEPROM/EEPROM.h"
 #include "min.h"
 int main(void){
 	LCD_Init();

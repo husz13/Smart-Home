@@ -2666,3 +2666,6 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/Drivers/LIB/D
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
 !SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2023-09-12 17:02:56.337
 !MESSAGE Cannot determine URI for '/Drivers/LIB/Def_Types.h'.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2023-09-12 17:19:54.008
+!MESSAGE No repository found at jar:file:/C:/Users/Dell/Downloads/de.innot.avreclipse.p2repository-2.4.2.zip!/.
