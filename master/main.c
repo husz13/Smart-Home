@@ -52,3 +52,9 @@ u8 check_EEPROM_Flag(void) {
 
 	return flag_val != EEPROM_EMPTY_ADDRESS;
 }
+
+u8 * getAdminPass(void) {
+	u8 * password = 0;
+	EEPROM_ReadBlockFromAddress(EEPROM_ADMIN_ADDRESS, password, PASS_SIZE);
+	return password;
+}

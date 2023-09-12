@@ -1,4 +1,4 @@
-18:36:20 **** Incremental Build of configuration Debug for project master ****
+18:42:38 **** Incremental Build of configuration Debug for project master ****
 make all 
 Building file: ../main.c
 Invoking: AVR Compiler
@@ -28,7 +28,7 @@ AVR Memory Usage
 ----------------
 Device: atmega16
 
-Program:   15362 bytes (93.8% Full)
+Program:   15408 bytes (94.0% Full)
 (.text + .data + .bootloader)
 
 Data:        396 bytes (38.7% Full)
@@ -38,5 +38,5 @@ Data:        396 bytes (38.7% Full)
 Finished building: sizedummy
  
 
-18:36:21 Build Finished (took 735ms)
+18:42:39 Build Finished (took 705ms)
 
