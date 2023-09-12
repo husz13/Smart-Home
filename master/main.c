@@ -58,3 +58,9 @@ u8 * getAdminPass(void) {
 	EEPROM_ReadBlockFromAddress(EEPROM_ADMIN_ADDRESS, password, PASS_SIZE);
 	return password;
 }
+
+u8 * getGuestPass(void) {
+	u8 * password = 0;
+	EEPROM_ReadBlockFromAddress(EEPROM_GUEST_ADDRESS, password, PASS_SIZE);
+	return password;
+}
