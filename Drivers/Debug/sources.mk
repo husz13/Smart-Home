@@ -28,6 +28,7 @@ HAL/StepperMotor \
 MCAL/ADC \
 MCAL/DIO \
 MCAL/Interrupt \
+MCAL/SPI \
 MCAL/Timer \
 . \
 

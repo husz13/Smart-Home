@@ -4,6 +4,7 @@
  *  Created on: 22 Aug 2023
  *      Author: compu market
  */
+#define SlavePin DIO_PORTB,PIN_4
 #include <avr/io.h>
 #include <util/delay.h>
 #include <math.h>
@@ -18,19 +19,34 @@
 #include "MCAL/Interrupt/int.h"
 #include "MCAL/ADC/int.h"
 #include "MCAL/Timer/int.h"
+#include "MCAL/SPI/int.h"
 extern u32 overflowNum, initialVal;
 
 void main(void) {
-	LCD_Init();
-	KeypadInit();
+	//LCD_Init();
+	//KeypadInit();
 
-	initSensor();
+//initSensor();
 
 	//initTimer1();
 	//Timer1_wait_ms(500);
 	//Timer1_Start();
+//init_SPI_Slave();
+	SetPinDir(DIO_PORTC, PIN_0, PIN_OUT);
+	SetPinDir(DIO_PORTC, PIN_1, PIN_OUT);
+	SetPinDir(DIO_PORTC, PIN_2, PIN_OUT);
+	SetPinDir(DIO_PORTC, PIN_6, PIN_OUT);
+
+	SetPinVal(DIO_PORTC, PIN_0, PIN_HIGH);
+	SetPinVal(DIO_PORTC, PIN_1, PIN_HIGH);
+	SetPinVal(DIO_PORTC, PIN_2, PIN_HIGH);
+	SetPinVal(DIO_PORTC, PIN_6, PIN_HIGH);
+	_delay_us(300);
+	SetPinVal(DIO_PORTC, PIN_6, PIN_LOW);
+
 
 	while (1) {
+
 
 	}
 

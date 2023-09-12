@@ -1,71 +1,20 @@
-00:20:33 **** Incremental Build of configuration Debug for project master ****
+13:26:41 **** Incremental Build of configuration Debug for project master ****
 make all 
-Building file: ../HAL/StepperMotor/prg.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"HAL/StepperMotor/prg.d" -MT"HAL/StepperMotor/prg.o" -c -o "HAL/StepperMotor/prg.o" "../HAL/StepperMotor/prg.c"
-In file included from ../HAL/StepperMotor/prg.c:11:
-c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
-In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
-                 from ../HAL/StepperMotor/prg.c:11:
-c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../HAL/StepperMotor/prg.c
- 
-Building file: ../HAL/Sensor/prg.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"HAL/Sensor/prg.d" -MT"HAL/Sensor/prg.o" -c -o "HAL/Sensor/prg.o" "../HAL/Sensor/prg.c"
-Finished building: ../HAL/Sensor/prg.c
- 
-Building file: ../HAL/Motor/prg.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"HAL/Motor/prg.d" -MT"HAL/Motor/prg.o" -c -o "HAL/Motor/prg.o" "../HAL/Motor/prg.c"
-Finished building: ../HAL/Motor/prg.c
- 
-Building file: ../HAL/LCD/prg.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"HAL/LCD/prg.d" -MT"HAL/LCD/prg.o" -c -o "HAL/LCD/prg.o" "../HAL/LCD/prg.c"
-../HAL/LCD/prg.c:7:1: warning: "F_CPU" redefined
-<command-line>: warning: this is the location of the previous definition
-In file included from ../HAL/LCD/prg.c:12:
-c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../HAL/LCD/prg.c
- 
-Building file: ../HAL/KeyBad/prg.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"HAL/KeyBad/prg.d" -MT"HAL/KeyBad/prg.o" -c -o "HAL/KeyBad/prg.o" "../HAL/KeyBad/prg.c"
-../HAL/KeyBad/prg.c:7:1: warning: "F_CPU" redefined
-<command-line>: warning: this is the location of the previous definition
-In file included from ../HAL/KeyBad/prg.c:12:
-c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
-Finished building: ../HAL/KeyBad/prg.c
- 
-Building target: master.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,master.map -mmcu=atmega16 -o "master.elf"  ./MCAL/Timer/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
-Finished building target: master.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S master.elf  >"master.lss"
-Finished building: master.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex master.elf  "master.hex"
-Finished building: master.hex
- 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega16 master.elf
 AVR Memory Usage
 ----------------
 Device: atmega16
 
-Program:   13812 bytes (84.3% Full)
+Program:   14734 bytes (89.9% Full)
 (.text + .data + .bootloader)
 
-Data:        388 bytes (37.9% Full)
+Data:        396 bytes (38.7% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
 
-00:20:35 Build Finished (took 1s.726ms)
+13:26:42 Build Finished. 0 errors, 0 warnings. (took 369ms)
 

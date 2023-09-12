@@ -7,11 +7,11 @@
 
 #ifndef HAL_LCD_INT_H_
 #define HAL_LCD_INT_H_
-#define LCD_CTRL_PORT DIO_PORTC
+#define LCD_CTRL_PORT DIO_PORTD
 #define LCD_DATA_PORT DIO_PORTA
-#define LCD_RS_PIN PIN_0
-#define LCD_RW_PIN PIN_1
-#define LCD_En_PIN PIN_2
+#define LCD_RS_PIN PIN_5
+#define LCD_RW_PIN PIN_6
+#define LCD_En_PIN PIN_7
 void LCD_Init();
 void LCD_SendCMD(u8 cmd);
 void LCD_WriteChar(u8 Char);

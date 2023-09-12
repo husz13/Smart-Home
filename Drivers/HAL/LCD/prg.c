@@ -36,10 +36,9 @@ void IntoString(u32 x) {
 //Initialisation
 void LCD_Init() {
 	SetPortDir(LCD_DATA_PORT, PORT_OUT);
-	SetPortDir(LCD_CTRL_PORT, PORT_OUT);
-	/*SetPinDir(LCD_CTRL_PORT, LCD_RS_PIN, PIN_OUT);
+	SetPinDir(LCD_CTRL_PORT, LCD_RS_PIN, PIN_OUT);
 	 SetPinDir(LCD_CTRL_PORT, LCD_RW_PIN, PIN_OUT);
-	 SetPinDir(LCD_CTRL_PORT, LCD_En_PIN, PIN_OUT);*/
+	SetPinDir(LCD_CTRL_PORT, LCD_En_PIN, PIN_OUT);
 	_delay_ms(30);
 	LCD_SendCMD(0b00111100);
 	_delay_ms(1);

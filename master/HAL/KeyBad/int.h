@@ -7,7 +7,7 @@
 
 #ifndef HAL_KEYBAD_INT_H_
 #define HAL_KEYBAD_INT_H_
-#define Keypad_Port DIO_PORTD
+#define Keypad_Port DIO_PORTC
 #define Keypad_Row0 PIN_0
 #define Keypad_Row1 PIN_1
 #define Keypad_Row2 PIN_2
