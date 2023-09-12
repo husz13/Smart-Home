@@ -64,3 +64,12 @@ u8 * getGuestPass(void) {
 	EEPROM_ReadBlockFromAddress(EEPROM_GUEST_ADDRESS, password, PASS_SIZE);
 	return password;
 }
+
+void setAdminPass(u8 *pass) {
+	EEPROM_WriteBlockToAddress(EEPROM_ADMIN_ADDRESS, pass, PASS_SIZE);
+}
+
+void setGuestPass(u8 *pass) {
+	EEPROM_WriteBlockToAddress(EEPROM_GUEST_ADDRESS, pass, PASS_SIZE);
+}
+
