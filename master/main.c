@@ -15,28 +15,17 @@
 #include "MCAL/SPI/int.h"
 #include "MCAL/EEPROM/EEPROM.h"
 #include "min.h"
+
+
 u8  password[PASS_SIZE];
+
+
 int main(void){
 	LCD_Init();
 	KeypadInit();
-	/*int i = 0;
-	int number = 0;
-	for(; i < 4; i++){
-		while(1){
-			int val = KeypadGetKey();
-			if(val){
-				number = number * 10 + val - '0';
-				break;
-			}
-		}
-	}
+	init_SPI_Master();
 
-	 LCD_WriteNum(number);*/
 
-//	init_SPI_Master();
-//	LCD_WriteString("HUSSEIN");
-//	setAdminGuestScreen();
-	showSettingsScreen();
 	while(1){
 //		SPI_Start_Trans();
 //		SPI_Transceive('A');
@@ -210,13 +199,132 @@ u8 showSettingsScreen(void) {
 
 }
 
-void showRoomGuestScreen(u8 room){
+void changeLedStatusScreen(u8 room){
+	LCD_Clear();
+	LCD_WriteString("LED ROOM ");
+	LCD_WriteChar(room + '1');
+	LCD_GoTO(2, 0);
+	LCD_WriteString("1:ON 2:OFF");
+	u8 user_choice;
+
+	while(1){
+		user_choice = KeypadGetKey();
+		user_choice -= '1';
+
+		if(user_choice == ROOM_LED_ON){
+			// send CMD_LED_ON
+
+			LCD_Clear();
+
+			LCD_WriteString("LED is ON");
+
+			_delay_ms(500);
+			break;
+		}
+
+		if(user_choice == ROOM_LED_OFF){
+			// send CMD_LED_OFF
+
+
+			LCD_Clear();
+
+			LCD_WriteString("LED is OFF");
+
+			_delay_ms(500);
+
+			break;
+		}
+
+	}
+
+
+
 
 }
 
-void showRoomAdminScreen(u8 room){
+void changeDoorStatusScreen(u8 room){
 
 }
+
+void showRoomAdminSettingScreen(u8 room){
+	LCD_Clear();
+	LCD_WriteString("1:Back 2:LED");
+	LCD_GoTO(2 , 0);
+	LCD_WriteString("3:DOOR");
+
+	u8 user_choice;
+
+	while(1){
+		user_choice = KeypadGetKey();
+		user_choice -= '0';
+
+		if(user_choice == LED){
+			changeLedStatusScreen(room);
+		}
+
+		if(user_choice == DOOR){
+
+		}
+	}
+}
+
+void showRoomGuestSettingScreen(u8 room){
+
+}
+
+void showRoomScreen(u8 room , u8 user_type){
+	// send room number
+	// receive room status
+
+	u8 room_door_status , room_led_status;
+
+	LCD_WriteString("LED: ");
+
+	if(room_led_status == ROOM_LED_ON){
+		LCD_WriteString("ON ");
+	}else{
+		LCD_WriteString("OFF ");
+	}
+
+	LCD_WriteString("DOOR: ");
+
+	if(room_door_status == ROOM_DOOR_OPEN){
+		LCD_WriteString("OPEN");
+	}else{
+		LCD_WriteString("CLOSED");
+	}
+
+	LCD_GoTO(2 , 0);
+
+	LCD_WriteString("1:Back 2:Change");
+
+	u8 user_choice;
+
+	while(1){
+		user_choice = KeypadGetKey();
+		user_choice -= '0';
+
+		if(user_choice == BACK)
+			return;
+
+		if(user_choice == CHANGE){
+
+			if(user_type == ADMIN){
+				showRoomAdminSettingScreen(room);
+			}else{
+				showRoomGuestSettingScreen(room);
+			}
+
+			break;
+		}
+	}
+
+
+
+
+}
+
+
 
 void showAcScreen(void){
 
@@ -231,9 +339,9 @@ void showAdminScreen(void){
 
 	while(1){
 		user_choice = KeypadGetKey();
-		user_choice -= '0';
+		user_choice -= '1';
 		if(user_choice == ROOM1 || user_choice == ROOM2 || user_choice == ROOM3){
-			showRoomAdminScreen(user_choice);
+			showRoomScreen(user_choice , ADMIN);
 			break;
 		}
 
@@ -256,7 +364,7 @@ void showGuestScreen(void){
 		user_choice = KeypadGetKey();
 		user_choice -= '0';
 		if(user_choice == ROOM1 || user_choice == ROOM2 || user_choice == ROOM3){
-			showRoomGuestScreen(user_choice);
+			showRoomScreen(user_choice , GUEST);
 			break;
 		}
 

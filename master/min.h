@@ -21,10 +21,35 @@
 #define MAX_TRIAL_NUMBER 3
 #define CORRECT_PASSWORD 1
 #define WRONG_PASSWORD 0
-#define ROOM1 1
-#define ROOM2 2
-#define ROOM3 3
-#define AC 4
+#define CHANGE 2
+#define BACK 1
+#define LED 2
+#define DOOR 3
+
+/*     Slave defines         */
+
+#define ROOM1 0
+#define ROOM2 1
+#define ROOM3 2
+#define AC 3
+#define ROOM_DOOR 0
+#define ROOM_LED 1
+#define ROOM_LED_OFF 0
+#define ROOM_LED_ON 1
+#define ROOM_DOOR_CLOSED 0
+#define ROOM_DOOR_OPEN 1
+#define AC_OFF 0
+#define AC_ON 1
+#define CMD_CLOSE_DOOR 0
+#define CMD_OPEN_DOOR 1
+#define CMD_LED_OFF 0
+#define CMD_LED_ON 1
+#define CMD_AC_OFF 0
+#define CMD_AC_ON 1
+
+
+/*        end slave defines                 */
+
 
 u8 check_EEPROM_Flag(void); //Checks EEPROM Flag
 void getAdminPass(void); //Returns Admin Password From EEPROM
@@ -41,8 +66,9 @@ u8 showSettingsScreen(void);
  * if not call checkUserPassScreen
  *
  */
-void showRoomGuestScreen(u8 room);
-void showRoomAdminScreen(u8 room);
+void showRoomScreen(u8 room , u8 user_type);
+void showRoomAdminSettingScreen(u8 room);
+void showRoomGuestSettingScreen(u8 room);
 void showAcScreen(void);
 void showAdminScreen(void);
 void showGuestScreen(void);
