@@ -27,8 +27,8 @@
 #define AC 4
 
 u8 check_EEPROM_Flag(void); //Checks EEPROM Flag
-u8 * getAdminPass(void); //Returns Admin Password From EEPROM
-u8 * getGuestPass(void); //Returns Guest Password From EEPROM
+void getAdminPass(void); //Returns Admin Password From EEPROM
+void getGuestPass(void); //Returns Guest Password From EEPROM
 void setAdminPass(u8 *pass); //Store Admin Password In EEPROM
 void setGuestPass(u8 *pass); //Store Guest Password In EEPROM
 void setAdminGuestScreen(void); // Get admin and guest pass From User And Set Them
@@ -41,7 +41,8 @@ u8 showSettingsScreen(void);
  * if not call checkUserPassScreen
  *
  */
-void showRoomScreen(u8 room);
+void showRoomGuestScreen(u8 room);
+void showRoomAdminScreen(u8 room);
 void showAcScreen(void);
 void showAdminScreen(void);
 void showGuestScreen(void);

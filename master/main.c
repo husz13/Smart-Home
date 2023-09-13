@@ -15,6 +15,7 @@
 #include "MCAL/SPI/int.h"
 #include "MCAL/EEPROM/EEPROM.h"
 #include "min.h"
+u8  password[PASS_SIZE];
 int main(void){
 	LCD_Init();
 	KeypadInit();
@@ -35,6 +36,7 @@ int main(void){
 //	init_SPI_Master();
 //	LCD_WriteString("HUSSEIN");
 //	setAdminGuestScreen();
+	showSettingsScreen();
 	while(1){
 //		SPI_Start_Trans();
 //		SPI_Transceive('A');
@@ -50,21 +52,19 @@ int main(void){
 }
 
 u8 check_EEPROM_Flag(void) {
-	u8 flag_val = EEPROM_ReadByteFromAddress(EEPROM_FLAG_ADDRESS);
+	u8 flag_val = EEPROM_read(EEPROM_FLAG_ADDRESS); //EEPROM_ReadByteFromAddress(EEPROM_FLAG_ADDRESS);
 
-	return flag_val != EEPROM_EMPTY_ADDRESS;
+	return flag_val == EEPROM_EMPTY_ADDRESS;
 }
 
-u8 * getAdminPass(void) {
-	u8 * password = 0;
+void getAdminPass(void) {
 	EEPROM_ReadBlockFromAddress(EEPROM_ADMIN_ADDRESS, password, PASS_SIZE);
-	return password;
+//	return password;
 }
 
-u8 * getGuestPass(void) {
-	u8 * password = 0;
+void getGuestPass(void) {
 	EEPROM_ReadBlockFromAddress(EEPROM_GUEST_ADDRESS, password, PASS_SIZE);
-	return password;
+//	return password;
 }
 
 void setAdminPass(u8 pass[]) {
@@ -111,9 +111,9 @@ void setAdminGuestScreen(void) {
 
 	/* save the passwords in EEPROM and make the flag address with 0 */
 
-//	EEPROM_WriteByteToAddress(EEPROM_FLAG_ADDRESS, EEPROM_FLAG_NOT_EMPTY);
-//	setAdminPass(adminPass);
-//	setGuestPass(guestPass);
+	EEPROM_write(EEPROM_FLAG_ADDRESS, EEPROM_FLAG_NOT_EMPTY);
+	setAdminPass(adminPass);
+	setGuestPass(guestPass);
 
 	_delay_ms(500);
 	LCD_Clear();
@@ -151,14 +151,12 @@ u8 checkUserPassScreen(void) {
 		LCD_WriteString("Enter Password:");
 		LCD_GoTO(2, 0);
 
-		u8 * password;
-
 		switch (user_type) {
 		case ADMIN:
-			password = getAdminPass();
+			getAdminPass();
 			break;
 		case GUEST:
-			password = getGuestPass();
+			getGuestPass();
 			break;
 		}
 
@@ -173,8 +171,8 @@ u8 checkUserPassScreen(void) {
 				if (password_digit)
 					break;
 			}
-
-			if (password_digit != *(password + i)) {
+			LCD_WriteChar(password[i]);
+			if (password_digit != password[i]) {
 				is_correct_password = WRONG_PASSWORD;
 			}
 		}
@@ -191,7 +189,10 @@ u8 checkUserPassScreen(void) {
 
 			continue;
 		}
-
+		LCD_Clear();
+		LCD_WriteString("Correct Password !");
+		_delay_ms(500);
+		LCD_Clear();
 		return user_type;
 
 	}
@@ -202,14 +203,18 @@ u8 checkUserPassScreen(void) {
 
 u8 showSettingsScreen(void) {
 
-	if(check_EEPROM_Flag){
+	if(check_EEPROM_Flag()){
 		setAdminGuestScreen();
 	}
 	return checkUserPassScreen();
 
 }
 
-void showRoomScreen(u8 room){
+void showRoomGuestScreen(u8 room){
+
+}
+
+void showRoomAdminScreen(u8 room){
 
 }
 
@@ -228,7 +233,7 @@ void showAdminScreen(void){
 		user_choice = KeypadGetKey();
 		user_choice -= '0';
 		if(user_choice == ROOM1 || user_choice == ROOM2 || user_choice == ROOM3){
-			showRoomScreen(user_choice);
+			showRoomAdminScreen(user_choice);
 			break;
 		}
 
@@ -251,7 +256,7 @@ void showGuestScreen(void){
 		user_choice = KeypadGetKey();
 		user_choice -= '0';
 		if(user_choice == ROOM1 || user_choice == ROOM2 || user_choice == ROOM3){
-			showRoomScreen(user_choice);
+			showRoomGuestScreen(user_choice);
 			break;
 		}
 
