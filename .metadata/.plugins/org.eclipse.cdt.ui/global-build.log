@@ -1609,3 +1609,5589 @@ Data:          0 bytes (0.0% Full)
 
 Finished building: sizedummy
  
+04:31:43 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Building file: ../HAL/LCD/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/LCD/prg.d" -MT"HAL/LCD/prg.o" -c -o "HAL/LCD/prg.o" "../HAL/LCD/prg.c"
+../HAL/LCD/prg.c:7:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../HAL/LCD/prg.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/LCD/prg.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:9:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:25: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: Drivers.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Drivers.map -mmcu=atmega32 -o "Drivers.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: Drivers.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Drivers.elf  >"Drivers.lss"
+Finished building: Drivers.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Drivers.elf  "Drivers.hex"
+Finished building: Drivers.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14870 bytes (45.4% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+04:31:47 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+04:31:48 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     126 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+04:31:53 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Building file: ../HAL/LCD/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/LCD/prg.d" -MT"HAL/LCD/prg.o" -c -o "HAL/LCD/prg.o" "../HAL/LCD/prg.c"
+../HAL/LCD/prg.c:7:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../HAL/LCD/prg.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/LCD/prg.c
+ 
+Building target: Drivers.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Drivers.map -mmcu=atmega32 -o "Drivers.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o   
+Finished building target: Drivers.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Drivers.elf  >"Drivers.lss"
+Finished building: Drivers.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Drivers.elf  "Drivers.hex"
+Finished building: Drivers.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+04:31:54 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+04:31:54 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     126 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+04:35:00 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+04:35:01 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+04:35:02 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     126 bytes (0.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+05:46:19 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+05:46:21 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+05:46:21 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+05:46:22 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../MCAL/Timer/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/Timer/prg.d" -MT"MCAL/Timer/prg.o" -c -o "MCAL/Timer/prg.o" "../MCAL/Timer/prg.c"
+Finished building: ../MCAL/Timer/prg.c
+ 
+Building file: ../MCAL/SPI/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/SPI/prg.d" -MT"MCAL/SPI/prg.o" -c -o "MCAL/SPI/prg.o" "../MCAL/SPI/prg.c"
+Finished building: ../MCAL/SPI/prg.c
+ 
+Building file: ../MCAL/Interrupt/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/Interrupt/prg.d" -MT"MCAL/Interrupt/prg.o" -c -o "MCAL/Interrupt/prg.o" "../MCAL/Interrupt/prg.c"
+Finished building: ../MCAL/Interrupt/prg.c
+ 
+Building file: ../MCAL/DIO/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/DIO/prg.d" -MT"MCAL/DIO/prg.o" -c -o "MCAL/DIO/prg.o" "../MCAL/DIO/prg.c"
+../MCAL/DIO/prg.c: In function 'DIO_GetPinVal':
+../MCAL/DIO/prg.c:153: warning: control reaches end of non-void function
+../MCAL/DIO/prg.c: In function 'DIO_GetPortVal':
+../MCAL/DIO/prg.c:171: warning: control reaches end of non-void function
+Finished building: ../MCAL/DIO/prg.c
+ 
+Building file: ../MCAL/ADC/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/ADC/prg.d" -MT"MCAL/ADC/prg.o" -c -o "MCAL/ADC/prg.o" "../MCAL/ADC/prg.c"
+Finished building: ../MCAL/ADC/prg.c
+ 
+Building file: ../HAL/StepperMotor/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/StepperMotor/prg.d" -MT"HAL/StepperMotor/prg.o" -c -o "HAL/StepperMotor/prg.o" "../HAL/StepperMotor/prg.c"
+In file included from ../HAL/StepperMotor/prg.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../HAL/StepperMotor/prg.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/StepperMotor/prg.c
+ 
+Building file: ../HAL/Sensor/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/Sensor/prg.d" -MT"HAL/Sensor/prg.o" -c -o "HAL/Sensor/prg.o" "../HAL/Sensor/prg.c"
+Finished building: ../HAL/Sensor/prg.c
+ 
+Building file: ../HAL/Motor/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/Motor/prg.d" -MT"HAL/Motor/prg.o" -c -o "HAL/Motor/prg.o" "../HAL/Motor/prg.c"
+Finished building: ../HAL/Motor/prg.c
+ 
+Building file: ../HAL/LCD/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/LCD/prg.d" -MT"HAL/LCD/prg.o" -c -o "HAL/LCD/prg.o" "../HAL/LCD/prg.c"
+../HAL/LCD/prg.c:7:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../HAL/LCD/prg.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/LCD/prg.c
+ 
+Building file: ../HAL/KeyBad/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HAL/KeyBad/prg.d" -MT"HAL/KeyBad/prg.o" -c -o "HAL/KeyBad/prg.o" "../HAL/KeyBad/prg.c"
+../HAL/KeyBad/prg.c:7:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../HAL/KeyBad/prg.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/KeyBad/prg.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:9: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building file: ../min.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"min.d" -MT"min.o" -c -o "min.o" "../min.c"
+Finished building: ../min.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14090 bytes (43.0% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:08:38 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:08:38 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:08:39 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+../main.c: In function 'main':
+../main.c:49: error: duplicate case value
+../main.c:47: error: previously used here
+../main.c:83: error: duplicate case value
+../main.c:81: error: previously used here
+../main.c:115: error: duplicate case value
+../main.c:113: error: previously used here
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+06:09:08 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:09:09 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:09:09 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+../main.c: In function 'main':
+../main.c:83: error: duplicate case value
+../main.c:81: error: previously used here
+../main.c:115: error: duplicate case value
+../main.c:113: error: previously used here
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+06:09:29 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:09:29 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:09:30 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building file: ../min.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"min.d" -MT"min.o" -c -o "min.o" "../min.c"
+Finished building: ../min.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14310 bytes (43.7% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:42:48 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:42:49 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:42:50 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../MCAL/ADC/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/ADC/prg.d" -MT"MCAL/ADC/prg.o" -c -o "MCAL/ADC/prg.o" "../MCAL/ADC/prg.c"
+Finished building: ../MCAL/ADC/prg.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building file: ../min.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"min.d" -MT"min.o" -c -o "min.o" "../min.c"
+Finished building: ../min.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14318 bytes (43.7% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:42:58 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:42:59 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:42:59 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14318 bytes (43.7% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:43:29 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:44:32 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:44:34 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:44:34 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+06:44:35 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building file: ../min.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"min.d" -MT"min.o" -c -o "min.o" "../min.c"
+Finished building: ../min.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14318 bytes (43.7% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:10:12 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:10:12 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:10:13 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+../main.c: In function 'main':
+../main.c:167: error: expected declaration or statement at end of input
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+08:11:03 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:11:04 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:11:04 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14318 bytes (43.7% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:11:10 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:11:11 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:11:11 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14318 bytes (43.7% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:11:48 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:11:49 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:11:49 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14318 bytes (43.7% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:11:50 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:11:51 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:11:51 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14314 bytes (43.7% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:12:41 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:12:42 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:12:42 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14740 bytes (45.0% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:14:31 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:14:32 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:14:32 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14768 bytes (45.1% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:15:12 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:15:14 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:15:15 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:15:15 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14744 bytes (45.0% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:16:08 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:16:08 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:16:09 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15164 bytes (46.3% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:16:50 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:16:50 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:16:51 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15164 bytes (46.3% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:17:05 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:17:07 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:17:08 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:17:08 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15164 bytes (46.3% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:17:28 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:17:52 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:17:52 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:17:53 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15710 bytes (47.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:18:10 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:18:10 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:18:11 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16304 bytes (49.8% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:18:30 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:18:31 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:18:31 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16304 bytes (49.8% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:18:50 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:18:51 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:18:51 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16304 bytes (49.8% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:19:08 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:19:09 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:19:09 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16304 bytes (49.8% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:19:29 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:19:29 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:19:30 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16304 bytes (49.8% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:21:12 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:21:12 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:21:13 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15660 bytes (47.8% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:21:39 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:21:40 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:21:40 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16028 bytes (48.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:22:55 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:22:56 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:22:56 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17922 bytes (54.7% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:24:01 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:24:02 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:24:02 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17950 bytes (54.8% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:25:54 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:25:54 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:25:55 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+../main.c: In function 'main':
+../main.c:82: error: 'cmd' undeclared (first use in this function)
+../main.c:82: error: (Each undeclared identifier is reported only once
+../main.c:82: error: for each function it appears in.)
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+08:26:34 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:26:35 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:26:35 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17968 bytes (54.8% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:28:12 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:28:12 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:28:13 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17970 bytes (54.8% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:29:08 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:29:09 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:29:10 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17970 bytes (54.8% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:29:11 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:29:11 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:29:12 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17970 bytes (54.8% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:30:31 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:30:31 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:30:32 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17980 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:31:22 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:31:22 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:31:23 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:34:20 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:34:21 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:34:21 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:34:52 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:34:52 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:34:53 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:35:19 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:35:20 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:35:20 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:35:43 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:35:43 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:35:44 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:36:06 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:36:06 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:36:07 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:36:35 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:36:35 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:36:36 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:36:57 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:36:57 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:36:58 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:37:19 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:37:19 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:37:20 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:37:47 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:37:48 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:37:48 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:38:11 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:38:12 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:38:12 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:38:34 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:38:35 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:38:35 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:39:09 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:39:10 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:39:10 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:39:32 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:39:33 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:39:33 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:39:57 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:39:58 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:39:58 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:40:27 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:40:28 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:40:28 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:41:47 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:41:48 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:41:48 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:42:12 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:42:12 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:42:13 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:42:33 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:42:34 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:42:34 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17990 bytes (54.9% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:43:22 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:43:22 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:43:23 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+../main.c: In function 'main':
+../main.c:21: warning: unused variable 'cmd2'
+../main.c:20: warning: unused variable 'cmd1'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17972 bytes (54.8% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:46:59 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:47:00 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:47:00 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+../main.c: In function 'main':
+../main.c:140: error: duplicate case value
+../main.c:107: error: previously used here
+../main.c:204: error: expected declaration or statement at end of input
+../main.c:204: error: expected declaration or statement at end of input
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+08:47:54 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:47:54 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:47:55 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+../main.c: In function 'main':
+../main.c:140: error: duplicate case value
+../main.c:107: error: previously used here
+../main.c:204: error: expected declaration or statement at end of input
+../main.c:204: error: expected declaration or statement at end of input
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+08:47:56 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:47:57 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:47:57 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+../main.c: In function 'main':
+../main.c:21: warning: unused variable 'cmd2'
+../main.c:20: warning: unused variable 'cmd1'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17972 bytes (54.8% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:49:29 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:49:30 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:49:30 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   21766 bytes (66.4% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:49:59 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:50:00 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:50:00 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   21768 bytes (66.4% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:53:22 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:53:23 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:53:23 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   25552 bytes (78.0% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:53:54 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:53:54 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:53:54 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   25548 bytes (78.0% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:03:08 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:03:09 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:03:09 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   25962 bytes (79.2% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:04:05 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:04:05 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:04:06 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   25972 bytes (79.3% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:04:14 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:04:15 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:04:15 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   25974 bytes (79.3% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:04:53 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:04:53 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:04:54 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   25974 bytes (79.3% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:05:17 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:05:17 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:05:18 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+../main.c: In function 'main':
+../main.c:21: warning: unused variable 'cmd2'
+../main.c:20: warning: unused variable 'cmd1'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   25956 bytes (79.2% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:05:42 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:05:43 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:05:43 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+../main.c: In function 'main':
+../main.c:21: warning: unused variable 'cmd2'
+../main.c:20: warning: unused variable 'cmd1'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   25956 bytes (79.2% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:19:14 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:19:15 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:19:16 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   26098 bytes (79.6% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:20:09 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:20:09 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:20:10 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   26108 bytes (79.7% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:22:53 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:22:54 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:22:54 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   25750 bytes (78.6% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:26:26 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:26:26 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:26:27 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   25762 bytes (78.6% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:47:24 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:47:27 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:47:28 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:47:28 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   25778 bytes (78.7% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:51:44 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:51:44 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:51:45 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   25782 bytes (78.7% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:56:31 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:56:32 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:56:32 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../MCAL/Interrupt/prg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MCAL/Interrupt/prg.d" -MT"MCAL/Interrupt/prg.o" -c -o "MCAL/Interrupt/prg.o" "../MCAL/Interrupt/prg.c"
+Finished building: ../MCAL/Interrupt/prg.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   25882 bytes (79.0% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:58:50 **** Incremental Build of configuration Debug for project Drivers ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Drivers.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14950 bytes (45.6% Full)
+(.text + .data + .bootloader)
+
+Data:        392 bytes (19.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:58:50 **** Incremental Build of configuration Debug for project master ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 master.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:   14734 bytes (89.9% Full)
+(.text + .data + .bootloader)
+
+Data:        396 bytes (38.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:58:51 **** Incremental Build of configuration Debug for project slave ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: slave.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,slave.map -mmcu=atmega32 -o "slave.elf"  ./MCAL/Timer/prg.o  ./MCAL/SPI/prg.o  ./MCAL/Interrupt/prg.o  ./MCAL/DIO/prg.o  ./MCAL/ADC/prg.o  ./HAL/StepperMotor/prg.o  ./HAL/Sensor/prg.o  ./HAL/Motor/prg.o  ./HAL/LCD/prg.o  ./HAL/KeyBad/prg.o  ./main.o ./min.o   
+Finished building target: slave.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S slave.elf  >"slave.lss"
+Finished building: slave.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex slave.elf  "slave.hex"
+Finished building: slave.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 slave.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   30862 bytes (94.2% Full)
+(.text + .data + .bootloader)
+
+Data:        388 bytes (18.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

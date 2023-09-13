@@ -89,3 +89,13 @@ void LCD_WriteNum(u32 num) {
 void LCD_Clear(void) {
 	LCD_SendCMD(0b00000001);
 }
+void LCD_GoTO(u8 row, u8 clm) {
+	switch (row) {
+	case 1:
+		LCD_SendCMD(128 + clm);
+		break;
+	case 2:
+		LCD_SendCMD(192 + clm);
+		break;
+	}
+}

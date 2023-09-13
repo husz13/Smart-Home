@@ -1,4 +1,4 @@
-13:26:41 **** Incremental Build of configuration Debug for project master ****
+09:58:50 **** Incremental Build of configuration Debug for project master ****
 make all 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega16 master.elf
@@ -16,5 +16,5 @@ Data:        396 bytes (38.7% Full)
 Finished building: sizedummy
  
 
-13:26:42 Build Finished. 0 errors, 0 warnings. (took 369ms)
+09:58:51 Build Finished. 0 errors, 0 warnings. (took 300ms)
 
