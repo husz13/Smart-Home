@@ -202,4 +202,9 @@ u8 checkUserPassScreen(void) {
 
 u8 showSettingsScreen(void) {
 
+	if(check_EEPROM_Flag){
+		setAdminGuestScreen();
+	}
+	return checkUserPassScreen();
+
 }
