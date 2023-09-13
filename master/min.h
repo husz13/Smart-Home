@@ -21,10 +21,14 @@
 #define MAX_TRIAL_NUMBER 3
 #define CORRECT_PASSWORD 1
 #define WRONG_PASSWORD 0
+#define ROOM1 1
+#define ROOM2 2
+#define ROOM3 3
+#define AC 4
 
 u8 check_EEPROM_Flag(void); //Checks EEPROM Flag
-u8 * getAdminPass(void); //Returns Admin Password From EEPROM
-u8 * getGuestPass(void); //Returns Guest Password From EEPROM
+void getAdminPass(void); //Returns Admin Password From EEPROM
+void getGuestPass(void); //Returns Guest Password From EEPROM
 void setAdminPass(u8 *pass); //Store Admin Password In EEPROM
 void setGuestPass(u8 *pass); //Store Guest Password In EEPROM
 void setAdminGuestScreen(void); // Get admin and guest pass From User And Set Them
@@ -37,6 +41,11 @@ u8 showSettingsScreen(void);
  * if not call checkUserPassScreen
  *
  */
+void showRoomGuestScreen(u8 room);
+void showRoomAdminScreen(u8 room);
+void showAcScreen(void);
+void showAdminScreen(void);
+void showGuestScreen(void);
 void showMainScreen(u8 userType);
 /*Shows Main Screen Based On User Type -->
  * ADMIN

@@ -16,7 +16,7 @@
 	Function Arguments   : const uint16 uiAddress
 	Function Description :  Read one byte from the given  address.
 */
-u8 EEPROM_ReadByteFromAddress(const u16 address);
+unsigned char EEPROM_read(unsigned int uiAddress);
 
 /*
 	Function Name        : EEPROM_vReadBlockFromAddress
@@ -32,7 +32,7 @@ void EEPROM_ReadBlockFromAddress(const u16 address, u8* dist, const u16 size);
 	Function Arguments   : const uint16 uiAddress, const uint8 uiData
 	Function Description : Write one byte to given address.
 */
-void EEPROM_WriteByteToAddress(const u16 address, const u8 data);
+void EEPROM_write(unsigned int uiAddress, unsigned char ucData);
 
 /*
 	Function Name        : EEPROM_vWriteBlockToAddress
