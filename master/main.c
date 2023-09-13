@@ -34,7 +34,7 @@ int main(void){
 
 //	init_SPI_Master();
 //	LCD_WriteString("HUSSEIN");
-	setAdminGuestScreen();
+//	setAdminGuestScreen();
 	while(1){
 //		SPI_Start_Trans();
 //		SPI_Transceive('A');
@@ -207,4 +207,66 @@ u8 showSettingsScreen(void) {
 	}
 	return checkUserPassScreen();
 
+}
+
+void showRoomScreen(u8 room){
+
+}
+
+void showAcScreen(void){
+
+}
+
+void showAdminScreen(void){
+	LCD_WriteString("1:ROOM1 2:ROOM2");
+	LCD_GoTO(2 , 0);
+	LCD_WriteString("3:ROOM3 4:AC");
+
+	u8 user_choice ;
+
+	while(1){
+		user_choice = KeypadGetKey();
+		user_choice -= '0';
+		if(user_choice == ROOM1 || user_choice == ROOM2 || user_choice == ROOM3){
+			showRoomScreen(user_choice);
+			break;
+		}
+
+		if(user_choice == AC){
+			showAcScreen();
+			break;
+		}
+	}
+}
+
+
+void showGuestScreen(void){
+	LCD_WriteString("1:ROOM1 2:ROOM2");
+	LCD_GoTO(2 , 0);
+	LCD_WriteString("3:ROOM3");
+
+	u8 user_choice ;
+
+	while(1){
+		user_choice = KeypadGetKey();
+		user_choice -= '0';
+		if(user_choice == ROOM1 || user_choice == ROOM2 || user_choice == ROOM3){
+			showRoomScreen(user_choice);
+			break;
+		}
+
+
+	}
+}
+
+
+void showMainScreen(u8 userType){
+	switch(userType){
+	case ADMIN:
+		showAdminScreen();
+		break;
+	case GUEST:
+		showGuestScreen();
+		break;
+	}
 }

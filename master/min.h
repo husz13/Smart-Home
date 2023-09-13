@@ -21,6 +21,10 @@
 #define MAX_TRIAL_NUMBER 3
 #define CORRECT_PASSWORD 1
 #define WRONG_PASSWORD 0
+#define ROOM1 1
+#define ROOM2 2
+#define ROOM3 3
+#define AC 4
 
 u8 check_EEPROM_Flag(void); //Checks EEPROM Flag
 u8 * getAdminPass(void); //Returns Admin Password From EEPROM
@@ -37,6 +41,10 @@ u8 showSettingsScreen(void);
  * if not call checkUserPassScreen
  *
  */
+void showRoomScreen(u8 room);
+void showAcScreen(void);
+void showAdminScreen(void);
+void showGuestScreen(void);
 void showMainScreen(u8 userType);
 /*Shows Main Screen Based On User Type -->
  * ADMIN
