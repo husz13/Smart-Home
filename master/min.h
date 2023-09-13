@@ -7,15 +7,27 @@
 
 #ifndef MIN_H_
 #define MIN_H_
-#define ADMIN 0
-#define GUEST 1
+
+#define NOT_VALID_USER 0
+#define ADMIN 1
+#define GUEST 2
 #define BLOCK 3
+#define EEPROM_FLAG_ADDRESS 0x100
+#define EEPROM_ADMIN_ADDRESS 0x101
+#define EEPROM_GUEST_ADDRESS 0x105
+#define EEPROM_EMPTY_ADDRESS 0xFF
+#define EEPROM_FLAG_NOT_EMPTY 0
+#define PASS_SIZE 4
+#define MAX_TRIAL_NUMBER 3
+#define CORRECT_PASSWORD 1
+#define WRONG_PASSWORD 0
+
 u8 check_EEPROM_Flag(void); //Checks EEPROM Flag
-u32 getAdminPass(void); //Returns Admin Password From EEPROM
-u32 getGuestPass(void); //Returns Guest Password From EEPROM
+u8 * getAdminPass(void); //Returns Admin Password From EEPROM
+u8 * getGuestPass(void); //Returns Guest Password From EEPROM
 void setAdminPass(u8 *pass); //Store Admin Password In EEPROM
 void setGuestPass(u8 *pass); //Store Guest Password In EEPROM
-u8 setAdminGuestScreen(void); // Get admin and guest pass From User And Set Them
+void setAdminGuestScreen(void); // Get admin and guest pass From User And Set Them
 u8 checkUserPassScreen(void); //Get User Type from user & checks password 0-->admin/1-->guest /3-->Block Mode
 u8 showSettingsScreen(void);
 /*

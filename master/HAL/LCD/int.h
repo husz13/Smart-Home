@@ -18,4 +18,5 @@ void LCD_WriteChar(u8 Char);
 void LCD_WriteString(u8 *str);
 void LCD_WriteNum(u32 num);
 void LCD_Clear(void);
+void LCD_GoTO(u8 row, u8 clm);
 #endif /* HAL_LCD_INT_H_ */
