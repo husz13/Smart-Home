@@ -25,17 +25,9 @@ int main(void){
 	KeypadInit();
 	init_SPI_Master();
 
-
 	while(1){
-//		SPI_Start_Trans();
-//		SPI_Transceive('A');
-//		_delay_ms(500);
-//		SPI_Transceive('B');
-//		_delay_ms(500);
-//		SPI_Transceive('C');
-//		_delay_ms(500);
-//		SPI_Stop_Trans();
-
+		u8 user_type = showSettingsScreen();
+		showMainScreen(user_type);
 
 	}
 }
@@ -65,6 +57,7 @@ void setGuestPass(u8 pass[]) {
 }
 
 void setAdminGuestScreen(void) {
+	LCD_Clear();
 	u8 adminPass[PASS_SIZE], guestPass[PASS_SIZE];
 //	adminPass = (u8) calloc(PASS_SIZE, sizeof(u8));
 //	guestPass = (u8) calloc(PASS_SIZE, sizeof(u8));
@@ -115,7 +108,7 @@ void setAdminGuestScreen(void) {
 }
 
 u8 checkUserPassScreen(void) {
-
+	LCD_Clear();
 	u8 trial_number = MAX_TRIAL_NUMBER;
 
 	u8 user_type = NOT_VALID_USER;
@@ -191,7 +184,7 @@ u8 checkUserPassScreen(void) {
 }
 
 u8 showSettingsScreen(void) {
-
+	LCD_Clear();
 	if(check_EEPROM_Flag()){
 		setAdminGuestScreen();
 	}
@@ -204,7 +197,7 @@ void changeLedStatusScreen(u8 room){
 	LCD_WriteString("LED ROOM ");
 	LCD_WriteChar(room + '1');
 	LCD_GoTO(2, 0);
-	LCD_WriteString("1:ON 2:OFF");
+	LCD_WriteString("1:OFF 2:ON");
 	u8 user_choice;
 
 	while(1){
@@ -213,6 +206,12 @@ void changeLedStatusScreen(u8 room){
 
 		if(user_choice == ROOM_LED_ON){
 			// send CMD_LED_ON
+			SPI_Start_Trans();
+			SPI_Transceive(ROOM_LED);
+			SPI_Stop_Trans();
+			SPI_Start_Trans();
+			SPI_Transceive(CMD_LED_ON);
+			SPI_Stop_Trans();
 
 			LCD_Clear();
 
@@ -224,7 +223,12 @@ void changeLedStatusScreen(u8 room){
 
 		if(user_choice == ROOM_LED_OFF){
 			// send CMD_LED_OFF
-
+			SPI_Start_Trans();
+			SPI_Transceive(ROOM_LED);
+			SPI_Stop_Trans();
+			SPI_Start_Trans();
+			SPI_Transceive(CMD_LED_OFF);
+			SPI_Stop_Trans();
 
 			LCD_Clear();
 
@@ -238,12 +242,56 @@ void changeLedStatusScreen(u8 room){
 	}
 
 
-
-
 }
 
 void changeDoorStatusScreen(u8 room){
+	LCD_Clear();
+		LCD_WriteString("DOOR ROOM ");
+		LCD_WriteChar(room + '1');
+		LCD_GoTO(2, 0);
+		LCD_WriteString("1:CLOSE 2:OPEN");
+		u8 user_choice;
 
+		while(1){
+			user_choice = KeypadGetKey();
+			user_choice -= '1';
+
+			if(user_choice == ROOM_DOOR_OPEN){
+				// send CMD_OPEN_DOOR
+				SPI_Start_Trans();
+				SPI_Transceive(ROOM_DOOR);
+				SPI_Stop_Trans();
+				SPI_Start_Trans();
+				SPI_Transceive(CMD_OPEN_DOOR);
+				SPI_Stop_Trans();
+
+				LCD_Clear();
+
+				LCD_WriteString("DOOR is OPEN");
+
+				_delay_ms(500);
+				break;
+			}
+
+			if(user_choice == ROOM_DOOR_CLOSED){
+				// send CMD_CLOSE_DOOR
+				SPI_Start_Trans();
+				SPI_Transceive(ROOM_DOOR);
+				SPI_Stop_Trans();
+				SPI_Start_Trans();
+				SPI_Transceive(CMD_CLOSE_DOOR);
+				SPI_Stop_Trans();
+
+				LCD_Clear();
+
+				LCD_WriteString("DOOR is CLOSED");
+
+				_delay_ms(500);
+
+				break;
+			}
+
+		}
 }
 
 void showRoomAdminSettingScreen(u8 room){
@@ -295,18 +343,18 @@ void showRoomGuestSettingScreen(u8 room){
 }
 
 void showRoomScreen(u8 room , u8 user_type){
+	LCD_Clear();
 	// send room number
 	// receive room status
 	SPI_Start_Trans();
 	SPI_Transceive(room);
-	_delay_ms(50);
 	SPI_Stop_Trans();
+	_delay_ms(500);
 
 	SPI_Start_Trans();
-	u8 status = SPI_Transceive();
+	u8 status = SPI_Transceive(0);
 	u8 room_door_status = GetBit(status , PIN_7);
 	u8 room_led_status = GetBit(status , PIN_0);
-	_delay_ms(50);
 	SPI_Stop_Trans();
 
 
@@ -363,6 +411,7 @@ void showAcScreen(void){
 }
 
 void showAdminScreen(void){
+	LCD_Clear();
 	LCD_WriteString("1:ROOM1 2:ROOM2");
 	LCD_GoTO(2 , 0);
 	LCD_WriteString("3:ROOM3 4:AC");
@@ -386,6 +435,7 @@ void showAdminScreen(void){
 
 
 void showGuestScreen(void){
+	LCD_Clear();
 	LCD_WriteString("1:ROOM1 2:ROOM2");
 	LCD_GoTO(2 , 0);
 	LCD_WriteString("3:ROOM3");
@@ -406,12 +456,14 @@ void showGuestScreen(void){
 
 
 void showMainScreen(u8 userType){
-	switch(userType){
-	case ADMIN:
-		showAdminScreen();
-		break;
-	case GUEST:
-		showGuestScreen();
-		break;
+	while(1){
+		switch(userType){
+		case ADMIN:
+			showAdminScreen();
+			break;
+		case GUEST:
+			showGuestScreen();
+			break;
+		}
 	}
 }
