@@ -258,18 +258,40 @@ void showRoomAdminSettingScreen(u8 room){
 		user_choice = KeypadGetKey();
 		user_choice -= '0';
 
+		if(user_choice == BACK)
+			return;
+
 		if(user_choice == LED){
 			changeLedStatusScreen(room);
+			break;
 		}
 
 		if(user_choice == DOOR){
-
+			changeDoorStatusScreen(room);
+			break;
 		}
 	}
 }
 
 void showRoomGuestSettingScreen(u8 room){
+	LCD_Clear();
+	LCD_WriteString("1:Back 2:LED");
 
+	u8 user_choice;
+
+	while(1){
+		user_choice = KeypadGetKey();
+		user_choice -= '0';
+
+		if(user_choice == BACK)
+			return;
+
+		if(user_choice == LED){
+			changeLedStatusScreen(room);
+			break;
+		}
+
+	}
 }
 
 void showRoomScreen(u8 room , u8 user_type){
