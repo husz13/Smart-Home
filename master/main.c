@@ -275,8 +275,18 @@ void showRoomGuestSettingScreen(u8 room){
 void showRoomScreen(u8 room , u8 user_type){
 	// send room number
 	// receive room status
+	SPI_Start_Trans();
+	SPI_Transceive(room);
+	_delay_ms(50);
+	SPI_Stop_Trans();
 
-	u8 room_door_status , room_led_status;
+	SPI_Start_Trans();
+	u8 status = SPI_Transceive();
+	u8 room_door_status = GetBit(status , PIN_7);
+	u8 room_led_status = GetBit(status , PIN_0);
+	_delay_ms(50);
+	SPI_Stop_Trans();
+
 
 	LCD_WriteString("LED: ");
 
