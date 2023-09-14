@@ -6,7 +6,6 @@
  */
 
 #include "min.h"
-#include <avr/io.h>
 #include"MCAL/DIO/int.h"
 
 
@@ -39,3 +38,4 @@ void setup() {
 	SetPinDir(TEMPERATURE_CONTROL_PIN, PIN_OUT);
 
 }
+
