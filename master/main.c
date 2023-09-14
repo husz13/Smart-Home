@@ -512,7 +512,7 @@ void showGuestScreen(void){
 
 	while(1){
 		user_choice = KeypadGetKey();
-		user_choice -= '0';
+		user_choice -= '1';
 		if(user_choice == ROOM1 || user_choice == ROOM2 || user_choice == ROOM3){
 			showRoomScreen(user_choice , GUEST);
 			break;
