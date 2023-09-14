@@ -15,22 +15,23 @@
 #include "MCAL/Timer/int.h"
 #include "MCAL/SPI/int.h"
 #include "min.h"
-
+u8 getRoomStatus(u8 room);
 void main(void) {
 	//u8 cmd1 = 0;
 	//u8 cmd2 = 1;
 	u8 cmd = 1;
-	u8 OPT = 3;
+	u8 OPT;
+	u8 roomStatus;
 	setup();
 	EXTI0();
 	u8 sensorRead;
 
-	//init_SPI_Slave();
+	init_SPI_Slave();
 	initSensor();
 	while (1) {
 		//_delay_ms(500);
 		sensorRead = Sensor_Read();
-		if (sensorRead >= 27 && GetBit(PORTD, PIN_1)) {
+		if (sensorRead >= 27 && getPinOUT(AC_PIN)) {
 			//SetPinVal(AC_PIN, PIN_HIGH);
 			SetPinVal(TEMPERATURE_CONTROL_PIN, PIN_HIGH);
 
@@ -38,11 +39,15 @@ void main(void) {
 			SetPinVal(TEMPERATURE_CONTROL_PIN, PIN_LOW);
 		}
 		//receive order
+		OPT = SPI_Transceive(sensorRead);
 		switch (OPT) {
 		/////////////////////////////////---ROOM 1----////////////////////////////////////////////////////
 		case ROOM1: {
 			//send status
+			roomStatus = getRoomStatus(ROOM1);
+			SPI_Transceive(roomStatus);
 			//receive Order
+			cmd = SPI_Transceive(roomStatus);
 			switch (cmd) {
 			case ROOM_DOOR: {
 				//send status
@@ -51,7 +56,7 @@ void main(void) {
 				switch (cmd) {
 				case CMD_OPEN_DOOR: {
 					//Check Door Status
-					if (!GetBit(PORTC, PIN_6)) {
+					if (!getPinOUT(ROOM1_DOOR_LED_PIN)) {
 						SetPinVal(ROOM1_DOOR_PIN, PIN_HIGH);
 						_delay_us(1500);
 						SetPinVal(ROOM1_DOOR_PIN, PIN_LOW);
@@ -68,7 +73,7 @@ void main(void) {
 					break;
 				case CMD_CLOSE_DOOR: {
 					//Check Door Status
-					if (GetBit(PORTC, PIN_6)) {
+					if (getPinOUT(ROOM1_DOOR_LED_PIN)) {
 						SetPinVal(ROOM1_DOOR_PIN, PIN_HIGH);
 						_delay_us(50);
 						SetPinVal(ROOM1_DOOR_PIN, PIN_LOW);
@@ -119,7 +124,7 @@ void main(void) {
 				switch (cmd) {
 				case CMD_OPEN_DOOR: {
 					//Check Door Status
-					if (!GetBit(PORTC, PIN_7)) {
+					if (!getPinOUT(ROOM2_DOOR_LED_PIN)) {
 						SetPinVal(ROOM2_DOOR_PIN, PIN_HIGH);
 						_delay_us(1500);
 						SetPinVal(ROOM2_DOOR_PIN, PIN_LOW);
@@ -136,7 +141,7 @@ void main(void) {
 					break;
 				case CMD_CLOSE_DOOR: {
 					//Check Door Status
-					if (GetBit(PORTC, PIN_7)) {
+					if (getPinOUT(ROOM2_DOOR_LED_PIN)) {
 						SetPinVal(ROOM2_DOOR_PIN, PIN_HIGH);
 						_delay_us(50);
 						SetPinVal(ROOM2_DOOR_PIN, PIN_LOW);
@@ -184,7 +189,7 @@ void main(void) {
 				switch (cmd) {
 				case CMD_OPEN_DOOR: {
 					//Check Door Status
-					if (!GetBit(PORTD, PIN_0)) {
+					if (!getPinOUT(ROOM3_DOOR_LED_PIN)) {
 						SetPinVal(ROOM3_DOOR_PIN, PIN_HIGH);
 						_delay_us(1500);
 						SetPinVal(ROOM3_DOOR_PIN, PIN_LOW);
@@ -200,7 +205,7 @@ void main(void) {
 					break;
 				case CMD_CLOSE_DOOR: {
 					//Check Door Status
-					if (GetBit(PORTD, PIN_0)) {
+					if (getPinOUT(ROOM3_DOOR_LED_PIN)) {
 						SetPinVal(ROOM3_DOOR_PIN, PIN_HIGH);
 						_delay_us(50);
 						SetPinVal(ROOM3_DOOR_PIN, PIN_LOW);
@@ -260,7 +265,7 @@ void main(void) {
 ISR(INT0_vect) {
 	//SetPinDir(DIO_PORTA, PIN_5, PIN_OUT);
 	//SetPinVal(DIO_PORTA, PIN_5, PIN_HIGH);
-	if (!GetBit(PORTD, PIN_0)) {
+	if (!getPinOUT(ROOM3_DOOR_LED_PIN)) {
 		SetPinVal(ROOM3_DOOR_PIN, PIN_HIGH);
 		_delay_us(1500);
 		SetPinVal(ROOM3_DOOR_PIN, PIN_LOW);
@@ -272,7 +277,7 @@ ISR(INT0_vect) {
 		//cmd2 = 0;
 
 	}
-	if (!GetBit(PORTC, PIN_7)) {
+	if (!getPinOUT(ROOM2_DOOR_LED_PIN)) {
 		SetPinVal(ROOM2_DOOR_PIN, PIN_HIGH);
 		_delay_us(1500);
 		SetPinVal(ROOM2_DOOR_PIN, PIN_LOW);
@@ -284,7 +289,7 @@ ISR(INT0_vect) {
 		//	cmd2 = 0;
 
 	}
-	if (!GetBit(PORTC, PIN_6)) {
+	if (!getPinOUT(ROOM1_DOOR_LED_PIN)) {
 		SetPinVal(ROOM1_DOOR_PIN, PIN_HIGH);
 		_delay_us(1500);
 		SetPinVal(ROOM1_DOOR_PIN, PIN_LOW);
@@ -295,5 +300,15 @@ ISR(INT0_vect) {
 		SetPinVal(DIO_PORTC, PIN_6, PIN_HIGH);
 		//	cmd2 = 0;
 
+	}
+}
+u8 getRoomStatus(u8 room) {
+	switch (room) {
+	case ROOM1:
+		return (getPinOUT(ROOM1_LED_PIN) + (getPinOUT(ROOM1_DOOR_PIN) << 7));
+	case ROOM2:
+		return (getPinOUT(ROOM2_LED_PIN) + (getPinOUT(ROOM2_DOOR_PIN) << 7));
+	case ROOM3:
+		return (getPinOUT(ROOM3_LED_PIN) + (getPinOUT(ROOM3_DOOR_PIN) << 7));
 	}
 }
