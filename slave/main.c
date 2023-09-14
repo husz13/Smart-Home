@@ -51,8 +51,9 @@ void main(void) {
 			switch (cmd) {
 			case ROOM_DOOR: {
 				//send status
-				//receive order
 
+				//receive order
+				cmd = SPI_Transceive(roomStatus);
 				switch (cmd) {
 				case CMD_OPEN_DOOR: {
 					//Check Door Status
