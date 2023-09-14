@@ -34,4 +34,5 @@ void TogglePin(u8 port, u8 pin);
 u8 DIO_GetPinVal(u8 port, u8 pin);
 u8 DIO_GetPortVal(u8 port);
 void DIO_PullUp(u8 port, u8 pin);
+u8 getPinOUT(u8 port, u8 pin);
 #endif /* MCAL_DIO_INT_H_ */

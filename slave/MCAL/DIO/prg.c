@@ -185,4 +185,17 @@ void DIO_PullUp(u8 port, u8 pin) {
 		break;
 	}
 }
+u8 getPinOUT(u8 port, u8 pin) {
+	switch (port) {
+	case DIO_PORTA:
+		return GetBit(PORTA, pin);
+	case DIO_PORTB:
+		return GetBit(PORTB, pin);
+	case DIO_PORTC:
+		return GetBit(PORTC, pin);
+	case DIO_PORTD:
+		return GetBit(PORTD, pin);
+
+	}
+}
 
