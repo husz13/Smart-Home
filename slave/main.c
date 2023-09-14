@@ -97,6 +97,7 @@ void main(void) {
 				//cmd = 1;
 				//send status
 				//receive order
+				cmd = SPI_Transceive(roomStatus);
 
 				switch (cmd) {
 				case CMD_LED_ON:
@@ -116,11 +117,15 @@ void main(void) {
 			/////////////////////////////////---ROOM 2----////////////////////////////////////////////////////
 		case ROOM2: {
 			//send status
+			roomStatus = getRoomStatus(ROOM2);
+			SPI_Transceive(roomStatus);
 			//receive Order
+			cmd = SPI_Transceive(roomStatus);
 			switch (cmd) {
 			case ROOM_DOOR: {
 				//send status
 				//receive order
+				cmd = SPI_Transceive(roomStatus);
 
 				switch (cmd) {
 				case CMD_OPEN_DOOR: {
@@ -164,6 +169,7 @@ void main(void) {
 				cmd = 1;
 				//send status
 				//receive order
+				cmd = SPI_Transceive(roomStatus);
 
 				switch (cmd) {
 				case CMD_LED_ON:
@@ -182,11 +188,15 @@ void main(void) {
 			/////////////////////////////////---ROOM 3----////////////////////////////////////////////////////
 		case ROOM3: {
 			//send status
+			roomStatus = getRoomStatus(ROOM3);
+			SPI_Transceive(roomStatus);
 			//receive Order
+			cmd = SPI_Transceive(roomStatus);
 			switch (cmd) {
 			case ROOM_DOOR: {
 				//send status
 				//receive order
+				cmd = SPI_Transceive(roomStatus);
 				switch (cmd) {
 				case CMD_OPEN_DOOR: {
 					//Check Door Status
@@ -228,6 +238,7 @@ void main(void) {
 				cmd = 1;
 				//send status
 				//receive order
+				cmd = SPI_Transceive(roomStatus);
 
 				switch (cmd) {
 				case CMD_LED_ON:
@@ -246,7 +257,9 @@ void main(void) {
 			/////////////////////////////////---  AC ----////////////////////////////////////////////////////
 		case AC: {
 			//send status
+			SPI_Transceive(getPinOUT(AC_PIN));
 			//receive order
+			cmd = SPI_Transceive(roomStatus);
 			switch (cmd) {
 			case CMD_AC_ON:
 				SetPinVal(AC_PIN, PIN_HIGH);
