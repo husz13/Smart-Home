@@ -16,6 +16,7 @@
 #include "MCAL/SPI/int.h"
 #include "min.h"
 u8 getRoomStatus(u8 room);
+extern overflowNum, initialVal;
 void main(void) {
 	//u8 cmd1 = 0;
 	//u8 cmd2 = 1;
@@ -28,6 +29,9 @@ void main(void) {
 
 	init_SPI_Slave();
 	initSensor();
+	initTimer0();
+	Timer0_wait_ms(50);
+	Timer0_Start();
 	while (1) {
 		//_delay_ms(500);
 		sensorRead = Sensor_Read();
@@ -263,6 +267,7 @@ void main(void) {
 			switch (cmd) {
 			case CMD_AC_ON:
 				SetPinVal(AC_PIN, PIN_HIGH);
+
 				break;
 			case CMD_AC_OFF:
 				SetPinVal(AC_PIN, PIN_LOW);
@@ -316,6 +321,25 @@ ISR(INT0_vect) {
 
 	}
 }
+ISR(TIMER0_OVF_vect) {
+	static u32 cnt = 0;
+	cnt++;
+	if (cnt == overflowNum) {
+
+	u8 sensorRead;
+	sensorRead = Sensor_Read();
+	if (sensorRead >= 27 && getPinOUT(AC_PIN)) {
+		//SetPinVal(AC_PIN, PIN_HIGH);
+		SetPinVal(TEMPERATURE_CONTROL_PIN, PIN_HIGH);
+
+	} else {
+		SetPinVal(TEMPERATURE_CONTROL_PIN, PIN_LOW);
+	}
+		cnt = 0;
+		TCNT0 = initialVal;
+	}
+}
+
 u8 getRoomStatus(u8 room) {
 	switch (room) {
 	case ROOM1:
