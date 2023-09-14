@@ -69,6 +69,7 @@ u8 showSettingsScreen(void);
 void showRoomScreen(u8 room , u8 user_type);
 void showRoomAdminSettingScreen(u8 room);
 void showRoomGuestSettingScreen(u8 room);
+void showAcSettingScreen(void);
 void showAcScreen(void);
 void showAdminScreen(void);
 void showGuestScreen(void);

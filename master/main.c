@@ -349,7 +349,7 @@ void showRoomScreen(u8 room , u8 user_type){
 	SPI_Start_Trans();
 	SPI_Transceive(room);
 	SPI_Stop_Trans();
-	_delay_ms(500);
+	_delay_ms(50);
 
 	SPI_Start_Trans();
 	u8 status = SPI_Transceive(0);
@@ -404,9 +404,77 @@ void showRoomScreen(u8 room , u8 user_type){
 
 }
 
+void showAcSettingScreen(void){
+	LCD_Clear();
+	LCD_WriteString("1:OFF 2:ON");
 
+	u8 user_choice;
+	while(1){
+		user_choice = KeypadGetKey();
+		user_choice -= '1';
+
+		if(user_choice == AC_OFF){
+			SPI_Start_Trans();
+			SPI_Transceive(CMD_AC_OFF);
+			SPI_Stop_Trans();
+
+			LCD_Clear();
+			LCD_WriteString("AC is OFF");
+			_delay_ms(500);
+			break;
+		}else if(user_choice == AC_ON){
+			SPI_Start_Trans();
+			SPI_Transceive(CMD_AC_ON);
+			SPI_Stop_Trans();
+			_delay_ms(50);
+			LCD_Clear();
+			LCD_WriteString("AC is ON");
+			_delay_ms(500);
+			break;
+		}
+	}
+}
 
 void showAcScreen(void){
+	LCD_Clear();
+
+	// send AC
+	// receive AC status
+
+	SPI_Start_Trans();
+	SPI_Transceive(AC);
+	SPI_Stop_Trans();
+	_delay_ms(50);
+
+	SPI_Start_Trans();
+	u8 status = SPI_Transceive(0);
+	SPI_Stop_Trans();
+
+	LCD_WriteString("AC ");
+
+	if(status == AC_ON){
+		LCD_WriteString("ON");
+	}else{
+		LCD_WriteString("OFF");
+	}
+
+	LCD_GoTO(2,  0);
+
+	LCD_WriteString("1:Back 2:Change");
+
+	u8 user_choice;
+
+	while(1){
+		user_choice = KeypadGetKey();
+		user_choice -= '0';
+		if(user_choice == BACK)
+			return;
+
+		if(user_choice == CHANGE){
+			showAcSettingScreen();
+			break;
+		}
+	}
 
 }
 
