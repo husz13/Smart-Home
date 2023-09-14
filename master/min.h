@@ -25,7 +25,7 @@
 #define BACK 1
 #define LED 2
 #define DOOR 3
-
+#define CMD_BACK 6
 /*     Slave defines         */
 
 #define ROOM1 0
@@ -74,6 +74,7 @@ void showAcScreen(void);
 void showAdminScreen(void);
 void showGuestScreen(void);
 void showMainScreen(u8 userType);
+void goBackCMD(void);
 /*Shows Main Screen Based On User Type -->
  * ADMIN
  * ROOM 1 , 2, 3 ,AC

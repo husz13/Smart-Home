@@ -56,6 +56,13 @@ void setGuestPass(u8 pass[]) {
 	EEPROM_WriteBlockToAddress(EEPROM_GUEST_ADDRESS, pass, PASS_SIZE);
 }
 
+
+void goBackCMD(void){
+	SPI_Start_Trans();
+	SPI_Transceive(CMD_BACK);
+	SPI_Stop_Trans();
+}
+
 void setAdminGuestScreen(void) {
 	LCD_Clear();
 	u8 adminPass[PASS_SIZE], guestPass[PASS_SIZE];
@@ -306,8 +313,10 @@ void showRoomAdminSettingScreen(u8 room){
 		user_choice = KeypadGetKey();
 		user_choice -= '0';
 
-		if(user_choice == BACK)
+		if(user_choice == BACK){
+			goBackCMD();
 			return;
+		}
 
 		if(user_choice == LED){
 			changeLedStatusScreen(room);
@@ -331,9 +340,10 @@ void showRoomGuestSettingScreen(u8 room){
 		user_choice = KeypadGetKey();
 		user_choice -= '0';
 
-		if(user_choice == BACK)
+		if(user_choice == BACK){
+			goBackCMD();
 			return;
-
+		}
 		if(user_choice == LED){
 			changeLedStatusScreen(room);
 			break;
@@ -384,8 +394,10 @@ void showRoomScreen(u8 room , u8 user_type){
 		user_choice = KeypadGetKey();
 		user_choice -= '0';
 
-		if(user_choice == BACK)
+		if(user_choice == BACK){
+			goBackCMD();
 			return;
+		}
 
 		if(user_choice == CHANGE){
 
