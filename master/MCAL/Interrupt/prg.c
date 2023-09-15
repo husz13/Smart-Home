@@ -11,9 +11,10 @@
 void EXTI0(void) {
 	//GIE
 	SetBit(SREG, 7);
-	//Falling Edge
-	ClearBit(MCUCR, 0);
+	//Rising Edge
+	SetBit(MCUCR, 0);
 	SetBit(MCUCR, 1);
+
 	SetBit(GICR, 6);
 
 }
