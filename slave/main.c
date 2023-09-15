@@ -343,10 +343,10 @@ ISR(TIMER0_OVF_vect) {
 u8 getRoomStatus(u8 room) {
 	switch (room) {
 	case ROOM1:
-		return (getPinOUT(ROOM1_LED_PIN) + (getPinOUT(ROOM1_DOOR_PIN) << 7));
+		return (getPinOUT(ROOM1_LED_PIN) + (getPinOUT(ROOM1_DOOR_LED_PIN) << 7));
 	case ROOM2:
-		return (getPinOUT(ROOM2_LED_PIN) + (getPinOUT(ROOM2_DOOR_PIN) << 7));
+		return (getPinOUT(ROOM2_LED_PIN) + (getPinOUT(ROOM2_DOOR_LED_PIN) << 7));
 	case ROOM3:
-		return (getPinOUT(ROOM3_LED_PIN) + (getPinOUT(ROOM3_DOOR_PIN) << 7));
+		return (getPinOUT(ROOM3_LED_PIN) + (getPinOUT(ROOM3_DOOR_LED_PIN) << 7));
 	}
 }
