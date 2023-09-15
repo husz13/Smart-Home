@@ -160,7 +160,7 @@ u8 checkUserPassScreen(void) {
 				if (password_digit)
 					break;
 			}
-			LCD_WriteChar(password[i]);
+			LCD_WriteChar(password_digit);
 			if (password_digit != password[i]) {
 				is_correct_password = WRONG_PASSWORD;
 			}
