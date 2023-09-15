@@ -26,6 +26,11 @@
 #define LED 2
 #define DOOR 3
 #define CMD_BACK 6
+#define MODE_CONTROL_PORT DIO_PORTB
+#define GUEST_PIN PIN_0
+#define ADMIN_PIN PIN_1
+#define BLOCK_PIN PIN_2
+#define BLOCK_TIME 5
 /*     Slave defines         */
 
 #define ROOM1 0
@@ -66,6 +71,7 @@ u8 showSettingsScreen(void);
  * if not call checkUserPassScreen
  *
  */
+void showBlockScreen(void);
 void showRoomScreen(u8 room , u8 user_type);
 void showRoomAdminSettingScreen(u8 room);
 void showRoomGuestSettingScreen(u8 room);
@@ -74,7 +80,6 @@ void showAcScreen(void);
 void showAdminScreen(void);
 void showGuestScreen(void);
 void showMainScreen(u8 userType);
-void goBackCMD(void);
 /*Shows Main Screen Based On User Type -->
  * ADMIN
  * ROOM 1 , 2, 3 ,AC
@@ -87,6 +92,7 @@ void goBackCMD(void);
  * on/off Led
  *
  * */
+void goBackCMD(void);
 
 
 

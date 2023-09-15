@@ -24,10 +24,40 @@ int main(void){
 	LCD_Init();
 	KeypadInit();
 	init_SPI_Master();
+	u8 user_type;
+	SetPinDir(MODE_CONTROL_PORT , GUEST_PIN , PIN_OUT);
+	SetPinDir(MODE_CONTROL_PORT , ADMIN_PIN , PIN_OUT);
+	SetPinDir(MODE_CONTROL_PORT , BLOCK_PIN , PIN_OUT);
 
 	while(1){
-		u8 user_type = showSettingsScreen();
+		user_type = showSettingsScreen();
+
+		if(user_type == NOT_VALID_USER){
+			SetPinVal(MODE_CONTROL_PORT , BLOCK_PIN , PIN_HIGH);
+			showBlockScreen();
+			SetPinVal(MODE_CONTROL_PORT , BLOCK_PIN , PIN_LOW);
+		}else break;
+	}
+
+	while(1){
+		switch(user_type){
+		case ADMIN:
+			SetPinVal(MODE_CONTROL_PORT , ADMIN_PIN , PIN_HIGH);
+			break;
+		case GUEST:
+			SetPinVal(MODE_CONTROL_PORT , GUEST_PIN , PIN_HIGH);
+			break;
+		}
 		showMainScreen(user_type);
+
+		switch(user_type){
+		case ADMIN:
+			SetPinVal(MODE_CONTROL_PORT , ADMIN_PIN , PIN_LOW);
+			break;
+		case GUEST:
+			SetPinVal(MODE_CONTROL_PORT , GUEST_PIN , PIN_LOW);
+			break;
+		}
 
 	}
 }
@@ -197,6 +227,21 @@ u8 showSettingsScreen(void) {
 	}
 	return checkUserPassScreen();
 
+}
+
+
+void showBlockScreen(void){
+	u8 remaining_time = BLOCK_TIME;
+	while(remaining_time){
+		LCD_Clear();
+		LCD_WriteString("Block Mode");
+		LCD_GoTO(2, 0);
+		LCD_WriteString("Remaining: ");
+		LCD_WriteNum(remaining_time);
+		LCD_WriteChar('s');
+		_delay_ms(1000);
+		remaining_time--;
+	}
 }
 
 void changeLedStatusScreen(u8 room){
