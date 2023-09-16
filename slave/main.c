@@ -18,7 +18,7 @@
 #include "min.h"
 u8 getRoomStatus(u8 room);
 void setup();
-extern overflowNum, initialVal;
+extern u32 overflowNum, initialVal;
 void main(void) {
 	//u8 cmd1 = 0;
 	//u8 cmd2 = 1;
