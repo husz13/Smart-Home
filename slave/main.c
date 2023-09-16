@@ -57,12 +57,9 @@ void main(void) {
 					//Check Door Status
 					if (!getPinOUT(ROOM1_DOOR_LED_PIN)) {
 						SetPinVal(ROOM1_DOOR_PIN, PIN_HIGH);
-						_delay_us(2000);
+						_delay_us(1500);
 						SetPinVal(ROOM1_DOOR_PIN, PIN_LOW);
-						_delay_us(1000);
-						SetPinVal(ROOM1_DOOR_PIN, PIN_HIGH);
-						_delay_us(2000);
-						SetPinVal(ROOM1_DOOR_PIN, PIN_LOW);
+
 						SetPinVal(DIO_PORTC, PIN_6, PIN_HIGH);
 						//	cmd2 = 0;
 
@@ -77,10 +74,7 @@ void main(void) {
 						SetPinVal(ROOM1_DOOR_PIN, PIN_HIGH);
 						_delay_us(50);
 						SetPinVal(ROOM1_DOOR_PIN, PIN_LOW);
-						_delay_us(50);
-						SetPinVal(ROOM1_DOOR_PIN, PIN_HIGH);
-						_delay_us(50);
-						SetPinVal(ROOM1_DOOR_PIN, PIN_LOW);
+
 						SetPinVal(DIO_PORTC, PIN_6, PIN_LOW);
 						//cmd2 = 1;
 
@@ -133,10 +127,7 @@ void main(void) {
 						SetPinVal(ROOM2_DOOR_PIN, PIN_HIGH);
 						_delay_us(1500);
 						SetPinVal(ROOM2_DOOR_PIN, PIN_LOW);
-						_delay_us(1500);
-						SetPinVal(ROOM2_DOOR_PIN, PIN_HIGH);
-						_delay_us(1500);
-						SetPinVal(ROOM2_DOOR_PIN, PIN_LOW);
+
 						SetPinVal(DIO_PORTC, PIN_7, PIN_HIGH);
 						//	cmd2 = 0;
 
@@ -150,10 +141,7 @@ void main(void) {
 						SetPinVal(ROOM2_DOOR_PIN, PIN_HIGH);
 						_delay_us(50);
 						SetPinVal(ROOM2_DOOR_PIN, PIN_LOW);
-						_delay_us(50);
-						SetPinVal(ROOM2_DOOR_PIN, PIN_HIGH);
-						_delay_us(50);
-						SetPinVal(ROOM2_DOOR_PIN, PIN_LOW);
+
 						SetPinVal(DIO_PORTC, PIN_7, PIN_LOW);
 						//cmd2 = 1;
 
@@ -203,10 +191,7 @@ void main(void) {
 						SetPinVal(ROOM3_DOOR_PIN, PIN_HIGH);
 						_delay_us(1500);
 						SetPinVal(ROOM3_DOOR_PIN, PIN_LOW);
-						_delay_us(1500);
-						SetPinVal(ROOM3_DOOR_PIN, PIN_HIGH);
-						_delay_us(1500);
-						SetPinVal(ROOM3_DOOR_PIN, PIN_LOW);
+
 						SetPinVal(DIO_PORTD, PIN_0, PIN_HIGH);
 						//cmd2 = 0;
 
@@ -220,10 +205,7 @@ void main(void) {
 						SetPinVal(ROOM3_DOOR_PIN, PIN_HIGH);
 						_delay_us(50);
 						SetPinVal(ROOM3_DOOR_PIN, PIN_LOW);
-						_delay_us(50);
-						SetPinVal(ROOM3_DOOR_PIN, PIN_HIGH);
-						_delay_us(50);
-						SetPinVal(ROOM3_DOOR_PIN, PIN_LOW);
+
 						SetPinVal(DIO_PORTD, PIN_0, PIN_LOW);
 						//cmd2 = 1;
 
@@ -285,7 +267,7 @@ ISR(INT0_vect) {
 		_delay_us(1500);
 		SetPinVal(ROOM3_DOOR_PIN, PIN_LOW);
 
-		//cmd2 = 0;
+
 
 	}
 	if (!getPinOUT(ROOM2_DOOR_LED_PIN)) {
@@ -293,7 +275,7 @@ ISR(INT0_vect) {
 		_delay_us(1500);
 		SetPinVal(ROOM2_DOOR_PIN, PIN_LOW);
 
-		//	cmd2 = 0;
+
 
 	}
 	if (!getPinOUT(ROOM1_DOOR_LED_PIN)) {
@@ -301,7 +283,7 @@ ISR(INT0_vect) {
 		_delay_us(1500);
 		SetPinVal(ROOM1_DOOR_PIN, PIN_LOW);
 
-		//	cmd2 = 0;
+
 
 	}
 }
@@ -312,8 +294,8 @@ ISR(TIMER0_OVF_vect) {
 
 	u8 sensorRead;
 	sensorRead = Sensor_Read();
-	if (sensorRead >= 27 && getPinOUT(AC_PIN)) {
-		//SetPinVal(AC_PIN, PIN_HIGH);
+		if (sensorRead >= TEMP_C && getPinOUT(AC_PIN)) {
+
 		SetPinVal(TEMPERATURE_CONTROL_PIN, PIN_HIGH);
 
 	} else {
