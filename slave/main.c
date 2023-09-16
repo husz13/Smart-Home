@@ -4,6 +4,7 @@
  *  Created on: 12 Sept 2023
  *      Author: compu market
  */
+#define F_CPU 8000000
 #include <avr/io.h>
 #include <util/delay.h>
 #include "MCAL/DIO/int.h"
@@ -16,16 +17,17 @@
 #include "MCAL/SPI/int.h"
 #include "min.h"
 u8 getRoomStatus(u8 room);
+void setup();
 extern overflowNum, initialVal;
 void main(void) {
 	//u8 cmd1 = 0;
 	//u8 cmd2 = 1;
-	u8 cmd = 1;
+	u8 cmd;
 	u8 OPT;
 	u8 roomStatus;
 	setup();
 	EXTI0();
-	u8 sensorRead;
+
 
 	init_SPI_Slave();
 	initSensor();
@@ -33,17 +35,9 @@ void main(void) {
 	Timer0_wait_ms(50);
 	Timer0_Start();
 	while (1) {
-		//_delay_ms(500);
-		sensorRead = Sensor_Read();
-		if (sensorRead >= 27 && getPinOUT(AC_PIN)) {
-			//SetPinVal(AC_PIN, PIN_HIGH);
-			SetPinVal(TEMPERATURE_CONTROL_PIN, PIN_HIGH);
 
-		} else {
-			SetPinVal(TEMPERATURE_CONTROL_PIN, PIN_LOW);
-		}
 		//receive order
-		OPT = SPI_Transceive(sensorRead);
+		OPT = SPI_Transceive(1);
 		switch (OPT) {
 		/////////////////////////////////---ROOM 1----////////////////////////////////////////////////////
 		case ROOM1: {
@@ -63,16 +57,17 @@ void main(void) {
 					//Check Door Status
 					if (!getPinOUT(ROOM1_DOOR_LED_PIN)) {
 						SetPinVal(ROOM1_DOOR_PIN, PIN_HIGH);
-						_delay_us(1500);
+						_delay_us(2000);
 						SetPinVal(ROOM1_DOOR_PIN, PIN_LOW);
-						_delay_us(1500);
+						_delay_us(1000);
 						SetPinVal(ROOM1_DOOR_PIN, PIN_HIGH);
-						_delay_us(1500);
+						_delay_us(2000);
 						SetPinVal(ROOM1_DOOR_PIN, PIN_LOW);
 						SetPinVal(DIO_PORTC, PIN_6, PIN_HIGH);
 						//	cmd2 = 0;
 
 					}
+
 
 				}
 					break;
@@ -216,6 +211,7 @@ void main(void) {
 						//cmd2 = 0;
 
 					}
+
 				}
 					break;
 				case CMD_CLOSE_DOOR: {
@@ -288,11 +284,7 @@ ISR(INT0_vect) {
 		SetPinVal(ROOM3_DOOR_PIN, PIN_HIGH);
 		_delay_us(1500);
 		SetPinVal(ROOM3_DOOR_PIN, PIN_LOW);
-		_delay_us(1500);
-		SetPinVal(ROOM3_DOOR_PIN, PIN_HIGH);
-		_delay_us(1500);
-		SetPinVal(ROOM3_DOOR_PIN, PIN_LOW);
-		SetPinVal(DIO_PORTD, PIN_0, PIN_HIGH);
+
 		//cmd2 = 0;
 
 	}
@@ -300,11 +292,7 @@ ISR(INT0_vect) {
 		SetPinVal(ROOM2_DOOR_PIN, PIN_HIGH);
 		_delay_us(1500);
 		SetPinVal(ROOM2_DOOR_PIN, PIN_LOW);
-		_delay_us(1500);
-		SetPinVal(ROOM2_DOOR_PIN, PIN_HIGH);
-		_delay_us(1500);
-		SetPinVal(ROOM2_DOOR_PIN, PIN_LOW);
-		SetPinVal(DIO_PORTC, PIN_7, PIN_HIGH);
+
 		//	cmd2 = 0;
 
 	}
@@ -312,11 +300,7 @@ ISR(INT0_vect) {
 		SetPinVal(ROOM1_DOOR_PIN, PIN_HIGH);
 		_delay_us(1500);
 		SetPinVal(ROOM1_DOOR_PIN, PIN_LOW);
-		_delay_us(1500);
-		SetPinVal(ROOM1_DOOR_PIN, PIN_HIGH);
-		_delay_us(1500);
-		SetPinVal(ROOM1_DOOR_PIN, PIN_LOW);
-		SetPinVal(DIO_PORTC, PIN_6, PIN_HIGH);
+
 		//	cmd2 = 0;
 
 	}
@@ -350,3 +334,47 @@ u8 getRoomStatus(u8 room) {
 		return (getPinOUT(ROOM3_LED_PIN) + (getPinOUT(ROOM3_DOOR_LED_PIN) << 7));
 	}
 }
+void setup() {
+	//ROOM 1
+	//light
+	SetPinDir(ROOM1_LED_PIN, PIN_OUT);
+	//door
+	SetPinDir(ROOM1_DOOR_PIN, PIN_OUT);
+	//door indicator
+	SetPinDir(DIO_PORTC, PIN_6, PIN_OUT);
+	//ROOM  2
+	//light
+	SetPinDir(ROOM2_LED_PIN, PIN_OUT);
+	//door
+	SetPinDir(ROOM2_DOOR_PIN, PIN_OUT);
+	//door indicator
+	SetPinDir(DIO_PORTC, PIN_7, PIN_OUT);
+	//ROOM 3
+	//light
+	SetPinDir(ROOM3_LED_PIN, PIN_OUT);
+	//door
+	SetPinDir(ROOM3_DOOR_PIN, PIN_OUT);
+	//door indicator
+	SetPinDir(DIO_PORTD, PIN_0, PIN_OUT);
+
+	//AC
+	SetPinDir(AC_PIN, PIN_OUT);
+	//Temperature Control --> Fan Or AC
+	SetPinDir(TEMPERATURE_CONTROL_PIN, PIN_OUT);
+	//Check Doors
+	SetPinVal(ROOM3_DOOR_PIN, PIN_HIGH);
+	_delay_us(50);
+	SetPinVal(ROOM3_DOOR_PIN, PIN_LOW);
+
+	SetPinVal(ROOM2_DOOR_PIN, PIN_HIGH);
+	_delay_us(50);
+	SetPinVal(ROOM2_DOOR_PIN, PIN_LOW);
+
+	SetPinVal(ROOM1_DOOR_PIN, PIN_HIGH);
+	_delay_us(50);
+	SetPinVal(ROOM1_DOOR_PIN, PIN_LOW);
+
+}
+
+
+
