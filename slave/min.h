@@ -41,7 +41,7 @@
 #define LED_OFF_DOOR_OPEN 0b10000000
 #define LED_FF_DOOR_CLOSED 0b00000000
 
-void setup();
+
 
 
 //u8 getRoomStatus(u8 room);
