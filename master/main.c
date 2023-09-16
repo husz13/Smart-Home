@@ -24,6 +24,8 @@ int main(void){
 	LCD_Init();
 	KeypadInit();
 	init_SPI_Master();
+	EXTI0();
+
 	u8 user_type;
 	SetPinDir(MODE_CONTROL_PORT , GUEST_PIN , PIN_OUT);
 	SetPinDir(MODE_CONTROL_PORT , ADMIN_PIN , PIN_OUT);
@@ -592,3 +594,12 @@ void showMainScreen(u8 userType){
 		}
 	}
 }
+
+ISR(INT0_vect) {
+	LCD_Clear();
+	LCD_WriteString("Fire Alarm !!!");
+	while(1){
+
+	}
+}
+
