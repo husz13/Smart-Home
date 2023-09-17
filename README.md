@@ -15,7 +15,7 @@ Welcome to the Smart Home System project! This project focuses on developing an 
 
 ## Project Preview 
 
-<video src="Final2.mp4" controls title="Title"></video>
+<video src="Final2.mp4" width=600 controls title="Title"></video>
 ## Getting Started
 
 To get started with the Smart Home System project, follow these steps:
