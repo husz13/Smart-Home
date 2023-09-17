@@ -14,8 +14,8 @@ Welcome to the Smart Home System project! This project focuses on developing an 
 - DIO driver: Controls digital input/output signals for connecting and controlling various devices.
 
 ## Project Preview 
-![Alt text](<Preview.jpg>)
 
+<video src="Final.mp4" controls title="Title"></video>
 ## Getting Started
 
 To get started with the Smart Home System project, follow these steps:
