@@ -15,7 +15,11 @@ Welcome to the Smart Home System project! This project focuses on developing an 
 
 ## Project Preview 
 
-<video src="Final2.mp4" width=600 controls title="Title"></video>
+
+
+https://github.com/husz13/Smart-Home/assets/86701162/a0285445-1e9e-4a9e-9f7f-dd8335cae7be
+
+
 ## Getting Started
 
 To get started with the Smart Home System project, follow these steps:
