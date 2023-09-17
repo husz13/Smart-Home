@@ -49,5 +49,3 @@ If you have any questions, suggestions, or feedback regarding the Smart Home Sys
 
 Thank you for your interest in the Smart Home System project. We hope you find it insightful and inspiring as we continue to innovate in the field of smart home automation.
 
-[Your Name]
-[Your Email]
